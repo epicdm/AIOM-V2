@@ -1,0 +1,19 @@
+{
+  "id": "mobile-topup-service",
+  "category": "Core",
+  "title": "Mobile Top-Up Service",
+  "description": "Service orchestrating mobile top-ups with wallet deduction, Reloadly API calls, transaction recording, and receipt generation.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "wallet-balance-service",
+    "reloadly-integration",
+    "wallet-transaction-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.185Z",
+  "updatedAt": "2026-01-16T17:54:59.990Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:43:26.827Z"
+}

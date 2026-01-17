@@ -1,0 +1,18 @@
+{
+  "id": "expense-compliance-monitor",
+  "category": "Core",
+  "title": "Expense Compliance Monitor",
+  "description": "Monitor checking expense requests for policy violations, missing documentation, and approval delays. Flags suspicious patterns.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "proactive-monitoring-engine",
+    "expense-workflow-engine"
+  ],
+  "createdAt": "2026-01-16T01:27:54.158Z",
+  "updatedAt": "2026-01-16T22:56:28.794Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T22:53:27.353Z"
+}

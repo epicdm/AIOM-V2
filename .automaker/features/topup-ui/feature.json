@@ -1,0 +1,17 @@
+{
+  "id": "topup-ui",
+  "category": "Mobile",
+  "title": "Mobile Top-Up UI",
+  "description": "Mobile interface for purchasing airtime/data with recipient selection, amount entry, operator detection, and confirmation flow.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "mobile-topup-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.186Z",
+  "updatedAt": "2026-01-16T18:06:23.738Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:55:21.336Z"
+}

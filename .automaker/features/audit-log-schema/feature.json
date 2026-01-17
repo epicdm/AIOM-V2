@@ -1,0 +1,15 @@
+{
+  "id": "audit-log-schema",
+  "category": "Database",
+  "title": "Audit Log Schema",
+  "description": "Schema for comprehensive audit logging with user, action, resource, timestamp, IP address, and before/after state snapshots.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.205Z",
+  "updatedAt": "2026-01-16T18:13:12.106Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:01:00.980Z"
+}

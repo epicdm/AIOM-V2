@@ -1,0 +1,15 @@
+{
+  "id": "receipt-capture-component",
+  "category": "UI",
+  "title": "Receipt Capture Component",
+  "description": "Mobile-optimized component for capturing receipt photos with image processing, auto-rotation, and upload to cloud storage.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.134Z",
+  "updatedAt": "2026-01-16T06:59:20.440Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T06:24:24.877Z"
+}

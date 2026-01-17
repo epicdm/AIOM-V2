@@ -1,0 +1,18 @@
+{
+  "id": "offline-sync-service",
+  "category": "Mobile",
+  "title": "Offline Sync Service",
+  "description": "Mobile service managing offline queue with background sync, conflict resolution, and retry logic for failed operations.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "offline-queue-schema",
+    "mobile-api-gateway"
+  ],
+  "createdAt": "2026-01-16T01:27:54.198Z",
+  "updatedAt": "2026-01-16T06:06:10.743Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T05:48:19.912Z"
+}

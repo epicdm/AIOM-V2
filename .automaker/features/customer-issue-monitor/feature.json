@@ -1,0 +1,18 @@
+{
+  "id": "customer-issue-monitor",
+  "category": "Core",
+  "title": "Customer Issue Monitor",
+  "description": "Monitor analyzing customer support tickets and communications to detect escalating issues, SLA violations, and satisfaction risks.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "proactive-monitoring-engine",
+    "odoo-partner-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.159Z",
+  "updatedAt": "2026-01-16T20:44:11.087Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T20:28:18.010Z"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "cash-position-monitor",
+  "category": "Core",
+  "title": "Cash Position Monitor",
+  "description": "Monitor tracking cash flow and alerting when balances approach thresholds. Predicts runway and suggests actions to improve liquidity.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "proactive-monitoring-engine",
+    "odoo-financial-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.156Z",
+  "updatedAt": "2026-01-16T20:46:20.092Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T20:28:16.278Z"
+}

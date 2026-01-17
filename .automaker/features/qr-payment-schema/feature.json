@@ -1,0 +1,17 @@
+{
+  "id": "qr-payment-schema",
+  "category": "Database",
+  "title": "QR Payment Schema",
+  "description": "Schema for QR payment requests with unique codes, amount, expiration, merchant info, and payment status.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "wallet-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.188Z",
+  "updatedAt": "2026-01-16T20:11:01.639Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:58:04.021Z"
+}

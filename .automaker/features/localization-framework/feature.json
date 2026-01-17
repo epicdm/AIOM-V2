@@ -1,0 +1,15 @@
+{
+  "id": "localization-framework",
+  "category": "Core",
+  "title": "Localization Framework",
+  "description": "Internationalization framework supporting English, French, Spanish with translation files, locale detection, and dynamic language switching.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.213Z",
+  "updatedAt": "2026-01-17T04:35:18.872Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T04:22:05.250Z"
+}

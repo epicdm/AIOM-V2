@@ -1,0 +1,15 @@
+{
+  "id": "unified-inbox-schema",
+  "category": "Database",
+  "title": "Unified Inbox Schema",
+  "description": "Schema for aggregating messages from Odoo Discuss, internal messaging, and system notifications into single unified inbox with thread grouping.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.143Z",
+  "updatedAt": "2026-01-16T10:25:04.027Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T10:05:20.156Z"
+}

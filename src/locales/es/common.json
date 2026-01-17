@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "dashboard": "Panel de control",
+    "settings": "Configuración",
+    "pricing": "Precios",
+    "overview": "Resumen",
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar sesión",
+    "profile": "Perfil",
+    "account": "Cuenta"
+  },
+  "header": {
+    "brandName": "Full Stack Campus",
+    "toggleMenu": "Alternar menú"
+  },
+  "footer": {
+    "copyright": "© {{year}} Full Stack Campus. Todos los derechos reservados.",
+    "privacyPolicy": "Política de privacidad",
+    "termsOfService": "Términos de servicio",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Transforma tu carrera",
+    "subtitle": "Conviértete en un ingeniero Full Stack",
+    "description": "Únete a nuestra comunidad en línea y aprende a convertirte en un ingeniero full stack. Domina el desarrollo frontend y backend, crea proyectos reales y lanza tu carrera en ingeniería de software.",
+    "ctaPrimary": "Comenzar",
+    "ctaSecondary": "Más información"
+  },
+  "auth": {
+    "welcomeBack": "Bienvenido de nuevo",
+    "createAccount": "Crear una cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "rememberMe": "Recordarme",
+    "noAccount": "¿No tienes una cuenta?",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "orContinueWith": "O continuar con",
+    "signingIn": "Iniciando sesión...",
+    "signingUp": "Creando cuenta..."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "submit": "Enviar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "actions": "Acciones",
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "success": "Éxito",
+    "error": "Error",
+    "warning": "Advertencia",
+    "info": "Información"
+  },
+  "language": {
+    "select": "Seleccionar idioma",
+    "english": "English",
+    "french": "Français",
+    "spanish": "Español",
+    "current": "Actual: {{language}}"
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "notFound": "Página no encontrada",
+    "unauthorized": "No estás autorizado para ver esta página",
+    "networkError": "Error de red. Por favor, verifica tu conexión."
+  }
+}

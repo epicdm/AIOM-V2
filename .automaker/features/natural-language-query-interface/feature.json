@@ -1,0 +1,17 @@
+{
+  "id": "natural-language-query-interface",
+  "category": "UI",
+  "title": "Natural Language Query Interface",
+  "description": "Chat-style interface for querying business operations using natural language. Displays tool calls, results, and follow-up suggestions.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "ai-conversation-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.151Z",
+  "updatedAt": "2026-01-16T04:51:54.772Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:37:22.482Z"
+}

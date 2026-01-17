@@ -1,0 +1,17 @@
+{
+  "id": "role-dashboard-layout-config",
+  "category": "UI",
+  "title": "Role-Based Dashboard Layout Config",
+  "description": "Configuration system defining dashboard widgets, layout, and data sources for each role (MD, Field Tech, Admin, Sales). Supports customization and reordering.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "role-based-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.120Z",
+  "updatedAt": "2026-01-16T08:29:37.465Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T08:01:06.365Z"
+}

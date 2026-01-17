@@ -1,0 +1,15 @@
+{
+  "id": "expense-request-schema",
+  "category": "Database",
+  "title": "Expense Request Schema",
+  "description": "Database schema for expense requests with fields for amount, purpose, requester, approver, status (pending/approved/rejected/disbursed), and workflow timestamps.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.107Z",
+  "updatedAt": "2026-01-16T01:52:55.336Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:38.092Z"
+}

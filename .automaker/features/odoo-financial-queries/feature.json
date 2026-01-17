@@ -1,0 +1,17 @@
+{
+  "id": "odoo-financial-queries",
+  "category": "API",
+  "title": "Odoo Financial Query Service",
+  "description": "Service for querying accounting data including AP/AR balances, invoice status, payment terms, and aging reports. Provides financial snapshots for AIOM intelligence.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.103Z",
+  "updatedAt": "2026-01-16T04:19:59.114Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:11:14.299Z"
+}

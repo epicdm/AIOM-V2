@@ -1,0 +1,18 @@
+{
+  "id": "wallet-ui",
+  "category": "Mobile",
+  "title": "Wallet Dashboard UI",
+  "description": "Mobile wallet interface showing balance, recent transactions, quick actions (top-up, transfer), and transaction history with filtering.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "wallet-balance-service",
+    "wallet-transaction-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.187Z",
+  "updatedAt": "2026-01-16T18:00:40.790Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:49:35.030Z"
+}

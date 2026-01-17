@@ -1,0 +1,18 @@
+{
+  "id": "anomaly-detection-service",
+  "category": "Core",
+  "title": "Advanced Anomaly Detection",
+  "description": "ML-powered service detecting unusual patterns in expenses, transactions, task completion rates, and user behavior with alert generation.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "complex",
+  "dependencies": [
+    "claude-api-client",
+    "audit-log-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.216Z",
+  "updatedAt": "2026-01-17T03:17:04.538Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T02:51:51.521Z"
+}

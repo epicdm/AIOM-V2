@@ -1,0 +1,15 @@
+{
+  "id": "dashboard-widget-registry",
+  "category": "UI",
+  "title": "Dashboard Widget Registry",
+  "description": "Registry of reusable dashboard widgets (task list, approval queue, financial summary, alerts, charts). Each widget defines data requirements and rendering logic.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.121Z",
+  "updatedAt": "2026-01-16T02:06:28.785Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:36.431Z"
+}

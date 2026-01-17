@@ -1,0 +1,15 @@
+{
+  "id": "odoo-xmlrpc-client",
+  "category": "API",
+  "title": "Odoo XML-RPC Client",
+  "description": "Core client library for connecting to Odoo ERP via XML-RPC API. Handles authentication, session management, and provides typed interfaces for common operations.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.098Z",
+  "updatedAt": "2026-01-16T01:57:45.540Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:41.551Z"
+}

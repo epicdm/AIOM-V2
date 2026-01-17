@@ -1,0 +1,74 @@
+services:
+  automaker-starter-kit:
+    image: postgres:17
+    restart: always
+    container_name: automaker-starter-kit-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_HOST_AUTH_METHOD: trust
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+      - ./pg_hba.conf:/etc/postgresql/pg_hba.conf
+    command: >
+      postgres
+      -c ssl=off
+      -c listen_addresses='*'
+      -c hba_file=/etc/postgresql/pg_hba.conf
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    container_name: aiom-redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data
+    command: >
+      redis-server
+      --appendonly yes
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mobile-api-gateway:
+    build:
+      context: ./mobile-gateway
+      dockerfile: Dockerfile
+    container_name: mobile-api-gateway
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    environment:
+      - DATABASE_URL=postgresql://postgres:example@automaker-starter-kit-db:5432/postgres
+      - MAIN_APP_URL=http://host.docker.internal:3000
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET:-}
+      - DEBUG=false
+      - COMPRESSION_MIN_SIZE=500
+      - COMPRESSION_LEVEL=6
+      - RATE_LIMIT_REQUESTS=100
+      - RATE_LIMIT_WINDOW=60
+    depends_on:
+      automaker-starter-kit:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/mobile/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  postgres:
+  redis_data:

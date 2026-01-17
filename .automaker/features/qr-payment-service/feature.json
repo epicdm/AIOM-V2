@@ -1,0 +1,18 @@
+{
+  "id": "qr-payment-service",
+  "category": "Core",
+  "title": "QR Payment Service",
+  "description": "Service generating QR codes for payment requests and processing scanned QR payments with wallet deduction and merchant credit.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "qr-payment-schema",
+    "wallet-balance-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.189Z",
+  "updatedAt": "2026-01-16T20:27:50.045Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T20:11:31.998Z"
+}

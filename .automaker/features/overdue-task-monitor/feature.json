@@ -1,0 +1,18 @@
+{
+  "id": "overdue-task-monitor",
+  "category": "Core",
+  "title": "Overdue Task Monitor",
+  "description": "Monitor detecting overdue tasks and escalating through notifications. Includes configurable escalation rules and supervisor alerts.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "proactive-monitoring-engine",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.155Z",
+  "updatedAt": "2026-01-16T23:05:20.344Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T22:57:26.038Z"
+}

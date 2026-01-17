@@ -1,0 +1,15 @@
+{
+  "id": "ai-conversation-schema",
+  "category": "Database",
+  "title": "AI Conversation History Schema",
+  "description": "Tables for storing AIOM conversation context with message history, tool calls, user preferences, and session management. Enables contextual multi-turn interactions.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.110Z",
+  "updatedAt": "2026-01-16T01:54:33.050Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:32.496Z"
+}

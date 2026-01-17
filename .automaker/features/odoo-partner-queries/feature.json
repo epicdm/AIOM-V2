@@ -1,0 +1,17 @@
+{
+  "id": "odoo-partner-queries",
+  "category": "API",
+  "title": "Odoo Partner/Customer Query Service",
+  "description": "Service for retrieving customer and vendor data from Odoo partners module. Includes contact information, account balances, and relationship history.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.102Z",
+  "updatedAt": "2026-01-16T04:41:14.247Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:37:24.288Z"
+}

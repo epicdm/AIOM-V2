@@ -1,0 +1,20 @@
+{
+  "id": "mobile-expense-flow",
+  "category": "Mobile",
+  "title": "Mobile Expense Management Flow",
+  "description": "Complete mobile expense workflow with request submission, approval actions, receipt capture, and voucher reconciliation in Android app.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "expense-request-form",
+    "expense-approval-interface",
+    "receipt-capture-component",
+    "mobile-api-gateway"
+  ],
+  "createdAt": "2026-01-16T01:27:54.219Z",
+  "updatedAt": "2026-01-16T07:32:34.609Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T07:04:47.459Z"
+}

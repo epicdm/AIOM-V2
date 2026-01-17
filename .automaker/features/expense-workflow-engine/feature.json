@@ -1,0 +1,19 @@
+{
+  "id": "expense-workflow-engine",
+  "category": "Core",
+  "title": "Expense Workflow Engine",
+  "description": "State machine managing expense lifecycle from request through approval, disbursement, receipt capture, reconciliation, and GL posting. Handles notifications at each stage.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "expense-request-schema",
+    "expense-voucher-schema",
+    "push-notification-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.137Z",
+  "updatedAt": "2026-01-16T04:12:45.991Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:11:12.952Z"
+}

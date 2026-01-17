@@ -1,0 +1,17 @@
+{
+  "id": "odoo-project-queries",
+  "category": "API",
+  "title": "Odoo Project Query Service",
+  "description": "Service for fetching project data from Odoo including milestones, team members, and status. Supports filtering by active status and user assignment.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.100Z",
+  "updatedAt": "2026-01-16T06:03:43.082Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T05:34:26.068Z"
+}

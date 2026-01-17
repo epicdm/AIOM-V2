@@ -1,0 +1,15 @@
+{
+  "id": "claude-api-client",
+  "category": "API",
+  "title": "Anthropic Claude API Client",
+  "description": "Client library for Anthropic Claude API with message handling, streaming support, tool use integration, and prompt caching. Handles rate limiting and retries.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.111Z",
+  "updatedAt": "2026-01-16T02:12:32.139Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:35.299Z"
+}

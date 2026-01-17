@@ -1,0 +1,17 @@
+{
+  "id": "aiom-tool-registry",
+  "category": "Core",
+  "title": "AIOM Tool Registry",
+  "description": "Registry system for defining and managing Claude tool definitions. Includes tool schemas, execution handlers, permission checks, and response formatters.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "claude-api-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.112Z",
+  "updatedAt": "2026-01-16T02:46:20.701Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T02:16:21.761Z"
+}

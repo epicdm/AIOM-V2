@@ -1,0 +1,17 @@
+{
+  "id": "redis-job-queue",
+  "category": "API",
+  "title": "Redis Job Queue",
+  "description": "Redis-based job queue for background processing of briefings, notifications, sync operations, and long-running tasks.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "redis-cache-layer"
+  ],
+  "createdAt": "2026-01-16T01:27:54.202Z",
+  "updatedAt": "2026-01-17T00:16:13.501Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T23:54:59.746Z"
+}

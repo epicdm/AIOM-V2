@@ -1,0 +1,18 @@
+{
+  "id": "task-widget",
+  "category": "UI",
+  "title": "Task List Widget",
+  "description": "Reusable widget displaying filtered task lists with sorting, status indicators, due date highlighting, and quick actions (complete, defer, reassign).",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "dashboard-widget-registry",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.127Z",
+  "updatedAt": "2026-01-17T01:33:57.229Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T01:23:05.790Z"
+}

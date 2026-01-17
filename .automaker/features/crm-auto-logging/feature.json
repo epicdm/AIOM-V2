@@ -1,0 +1,18 @@
+{
+  "id": "crm-auto-logging",
+  "category": "API",
+  "title": "CRM Auto-Logging",
+  "description": "Service automatically logging call summaries and notes to Odoo CRM with relationship linking and activity timeline updates.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "post-call-summarization",
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.178Z",
+  "updatedAt": "2026-01-16T20:39:16.667Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T20:11:28.874Z"
+}

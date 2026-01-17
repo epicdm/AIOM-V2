@@ -1,0 +1,17 @@
+{
+  "id": "sip-provisioning-service",
+  "category": "API",
+  "title": "SIP Provisioning Service",
+  "description": "Service for creating SIP accounts on FlexiSIP server and provisioning credentials to mobile apps. Handles account lifecycle management.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "sip-credential-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.168Z",
+  "updatedAt": "2026-01-16T08:25:59.739Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T08:01:08.551Z"
+}

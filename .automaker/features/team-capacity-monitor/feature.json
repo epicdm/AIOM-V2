@@ -1,0 +1,18 @@
+{
+  "id": "team-capacity-monitor",
+  "category": "Core",
+  "title": "Team Capacity Monitor",
+  "description": "Monitor tracking team workload, assignment balance, and capacity constraints. Alerts when individuals are overloaded or teams are underutilized.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "proactive-monitoring-engine",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.160Z",
+  "updatedAt": "2026-01-17T01:54:56.194Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T01:36:49.295Z"
+}

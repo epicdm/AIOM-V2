@@ -1,0 +1,17 @@
+{
+  "id": "call-disposition-ui",
+  "category": "Mobile",
+  "title": "Call Disposition UI",
+  "description": "Post-call interface for selecting disposition (resolved, follow-up needed, escalate), adding notes, and creating tasks.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "call-history-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.179Z",
+  "updatedAt": "2026-01-16T18:27:40.200Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:14:42.486Z"
+}

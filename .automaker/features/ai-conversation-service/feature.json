@@ -1,0 +1,19 @@
+{
+  "id": "ai-conversation-service",
+  "category": "Core",
+  "title": "AI Conversation Service",
+  "description": "Core service managing multi-turn conversations with Claude. Handles context management, tool execution, response streaming, and conversation history.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "claude-api-client",
+    "aiom-tool-registry",
+    "ai-conversation-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.149Z",
+  "updatedAt": "2026-01-16T04:23:53.637Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:02:26.626Z"
+}

@@ -1,0 +1,363 @@
+/**
+ * Mobile Home Page
+ *
+ * Central navigation hub for the mobile expense workflow.
+ * Provides quick access to expenses, approvals, and vouchers.
+ */
+
+import * as React from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  Receipt,
+  ClipboardCheck,
+  FileText,
+  Plus,
+  Clock,
+  CheckCircle,
+  DollarSign,
+  AlertCircle,
+  ChevronRight,
+  User,
+  Settings,
+  LogOut,
+  ArrowLeft,
+  Smartphone,
+  Newspaper,
+  QrCode,
+} from "lucide-react";
+import { authClient } from "~/lib/auth-client";
+import { redirect } from "@tanstack/react-router";
+import { Button } from "~/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import {
+  useMyExpenseRequests,
+  usePendingExpenseRequests,
+} from "~/hooks/useExpenseRequests";
+import {
+  useMyExpenseVouchers,
+  useUnreconciledVouchers,
+} from "~/hooks/useExpenseVouchers";
+import { cn } from "~/lib/utils";
+
+export const Route = createFileRoute("/mobile/")({
+  beforeLoad: async () => {
+    const session = await authClient.getSession();
+    if (!session) {
+      throw redirect({
+        to: "/sign-in",
+        search: { redirect: "/mobile" },
+      });
+    }
+  },
+  component: MobileHomePage,
+});
+
+/**
+ * Get initials from a name
+ */
+function getInitials(name: string): string {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
+
+/**
+ * Quick Action Card Component
+ */
+function QuickActionCard({
+  icon: Icon,
+  title,
+  description,
+  badge,
+  badgeColor,
+  href,
+}: {
+  icon: typeof Receipt;
+  title: string;
+  description: string;
+  badge?: number;
+  badgeColor?: string;
+  href: string;
+}) {
+  return (
+    <Link to={href}>
+      <Card className="transition-all duration-200 active:scale-[0.98] hover:shadow-md h-full">
+        <CardContent className="p-4">
+          <div className="flex items-start justify-between">
+            <div className="p-2 rounded-lg bg-primary/10">
+              <Icon className="w-6 h-6 text-primary" />
+            </div>
+            {badge !== undefined && badge > 0 && (
+              <span
+                className={cn(
+                  "px-2 py-0.5 text-xs font-semibold rounded-full",
+                  badgeColor || "bg-primary/10 text-primary"
+                )}
+              >
+                {badge}
+              </span>
+            )}
+          </div>
+          <h3 className="font-semibold mt-3">{title}</h3>
+          <p className="text-sm text-muted-foreground mt-1">{description}</p>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+}
+
+/**
+ * Status Summary Item
+ */
+function StatusSummaryItem({
+  icon: Icon,
+  label,
+  value,
+  colorClass,
+}: {
+  icon: typeof Clock;
+  label: string;
+  value: number;
+  colorClass: string;
+}) {
+  return (
+    <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+      <Icon className={cn("w-5 h-5", colorClass)} />
+      <div className="flex-1">
+        <p className="text-sm text-muted-foreground">{label}</p>
+      </div>
+      <span className={cn("text-lg font-semibold", colorClass)}>{value}</span>
+    </div>
+  );
+}
+
+function MobileHomePage() {
+  const { data: session } = authClient.useSession();
+
+  // Fetch data for dashboard stats
+  const { data: myExpenses } = useMyExpenseRequests();
+  const { data: pendingApprovals } = usePendingExpenseRequests();
+  const { data: myVouchers } = useMyExpenseVouchers();
+  const { data: unreconciledVouchers } = useUnreconciledVouchers();
+
+  // Calculate stats
+  const stats = {
+    myPendingExpenses: myExpenses?.filter((e) => e.status === "pending").length ?? 0,
+    myApprovedExpenses: myExpenses?.filter((e) => e.status === "approved").length ?? 0,
+    pendingApprovals: pendingApprovals?.length ?? 0,
+    unreconciledVouchers: unreconciledVouchers?.length ?? 0,
+    totalVouchers: myVouchers?.length ?? 0,
+  };
+
+  const userName = session?.user?.name || "User";
+  const userEmail = session?.user?.email || "";
+  const userImage = session?.user?.image || null;
+
+  return (
+    <div className="flex flex-col min-h-screen bg-background">
+      {/* Header */}
+      <header className="bg-primary text-primary-foreground">
+        <div className="px-4 py-6">
+          <div className="flex items-center justify-between mb-4">
+            <Link to="/dashboard">
+              <Button variant="ghost" size="icon" className="h-9 w-9 text-primary-foreground hover:bg-primary-foreground/10">
+                <ArrowLeft className="h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/dashboard/settings">
+              <Button variant="ghost" size="icon" className="h-9 w-9 text-primary-foreground hover:bg-primary-foreground/10">
+                <Settings className="h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+          <div className="flex items-center gap-4">
+            <Avatar className="h-14 w-14 border-2 border-primary-foreground/20">
+              {userImage ? (
+                <AvatarImage src={userImage} alt={userName} />
+              ) : (
+                <AvatarFallback className="bg-primary-foreground/10 text-primary-foreground">
+                  {getInitials(userName)}
+                </AvatarFallback>
+              )}
+            </Avatar>
+            <div>
+              <h1 className="text-xl font-semibold">Hello, {userName.split(" ")[0]}</h1>
+              <p className="text-sm text-primary-foreground/70">{userEmail}</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Quick Actions */}
+      <div className="p-4 -mt-4">
+        <Card className="shadow-lg">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">Quick Actions</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-4 gap-2">
+            <Link to="/mobile/expenses/new">
+              <Button className="w-full h-auto py-3 flex flex-col gap-1.5" data-testid="new-expense-btn">
+                <Plus className="w-5 h-5" />
+                <span className="text-xs">Expense</span>
+              </Button>
+            </Link>
+            <Link to="/mobile/pay">
+              <Button variant="outline" className="w-full h-auto py-3 flex flex-col gap-1.5" data-testid="scan-pay-btn">
+                <QrCode className="w-5 h-5" />
+                <span className="text-xs">Scan Pay</span>
+              </Button>
+            </Link>
+            <Link to="/mobile/topup">
+              <Button variant="outline" className="w-full h-auto py-3 flex flex-col gap-1.5" data-testid="mobile-topup-btn">
+                <Smartphone className="w-5 h-5" />
+                <span className="text-xs">Top-Up</span>
+              </Button>
+            </Link>
+            <Link to="/mobile/approvals">
+              <Button variant="outline" className="w-full h-auto py-3 flex flex-col gap-1.5 relative" data-testid="approvals-btn">
+                <ClipboardCheck className="w-5 h-5" />
+                <span className="text-xs">Approvals</span>
+                {stats.pendingApprovals > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                    {stats.pendingApprovals}
+                  </span>
+                )}
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 p-4 space-y-4">
+        {/* Daily Briefing Card */}
+        <Link to="/mobile/briefing" data-testid="daily-briefing-link">
+          <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 shadow-sm transition-all duration-200 active:scale-[0.99] hover:shadow-md">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Newspaper className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-primary">Daily Briefing</h3>
+                  <p className="text-sm text-muted-foreground">
+                    View your personalized daily summary
+                  </p>
+                </div>
+                <ChevronRight className="w-5 h-5 text-primary" />
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Navigation Cards */}
+        <div className="grid grid-cols-2 gap-4">
+          <QuickActionCard
+            icon={Receipt}
+            title="My Expenses"
+            description="View and manage your expense requests"
+            badge={stats.myPendingExpenses}
+            badgeColor="bg-yellow-500/10 text-yellow-600"
+            href="/mobile/expenses"
+          />
+          <QuickActionCard
+            icon={FileText}
+            title="Vouchers"
+            description="Manage expense vouchers"
+            badge={stats.unreconciledVouchers}
+            badgeColor="bg-orange-500/10 text-orange-600"
+            href="/mobile/vouchers"
+          />
+        </div>
+
+        {/* Status Summary */}
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-base">Status Summary</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <StatusSummaryItem
+              icon={Clock}
+              label="Pending Expenses"
+              value={stats.myPendingExpenses}
+              colorClass="text-yellow-600"
+            />
+            <StatusSummaryItem
+              icon={CheckCircle}
+              label="Approved Expenses"
+              value={stats.myApprovedExpenses}
+              colorClass="text-green-600"
+            />
+            <StatusSummaryItem
+              icon={ClipboardCheck}
+              label="Awaiting Your Approval"
+              value={stats.pendingApprovals}
+              colorClass="text-primary"
+            />
+            <StatusSummaryItem
+              icon={AlertCircle}
+              label="Unreconciled Vouchers"
+              value={stats.unreconciledVouchers}
+              colorClass="text-orange-600"
+            />
+          </CardContent>
+        </Card>
+
+        {/* Recent Activity Placeholder */}
+        <Card>
+          <CardHeader className="pb-2">
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-base">Recent Activity</CardTitle>
+              <Link to="/mobile/expenses">
+                <Button variant="ghost" size="sm" className="h-8 text-xs">
+                  View All
+                  <ChevronRight className="w-4 h-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
+          </CardHeader>
+          <CardContent>
+            {myExpenses && myExpenses.length > 0 ? (
+              <div className="space-y-3">
+                {myExpenses.slice(0, 3).map((expense) => (
+                  <Link key={expense.id} to="/mobile/expenses/$id" params={{ id: expense.id }}>
+                    <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium truncate">{expense.purpose}</p>
+                        <p className="text-xs text-muted-foreground capitalize">{expense.status}</p>
+                      </div>
+                      <div className="text-right ml-3">
+                        <p className="text-sm font-semibold">
+                          {new Intl.NumberFormat("en-US", {
+                            style: "currency",
+                            currency: expense.currency,
+                          }).format(parseFloat(expense.amount))}
+                        </p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-muted-foreground ml-2" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <Receipt className="w-10 h-10 text-muted-foreground mx-auto mb-2" />
+                <p className="text-sm text-muted-foreground">No recent activity</p>
+                <Link to="/mobile/expenses/new">
+                  <Button variant="outline" size="sm" className="mt-3">
+                    <Plus className="w-4 h-4 mr-2" />
+                    Create Expense
+                  </Button>
+                </Link>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}

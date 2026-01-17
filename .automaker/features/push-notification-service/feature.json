@@ -1,0 +1,15 @@
+{
+  "id": "push-notification-service",
+  "category": "API",
+  "title": "Push Notification Service",
+  "description": "Unified push notification service supporting web push and Firebase FCM for mobile. Handles device token registration, message queuing, and delivery tracking.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.117Z",
+  "updatedAt": "2026-01-16T02:06:27.275Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:45.378Z"
+}

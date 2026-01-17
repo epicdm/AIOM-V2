@@ -1,0 +1,17 @@
+{
+  "id": "call-recording-service",
+  "category": "API",
+  "title": "Call Recording Service",
+  "description": "Service for recording calls on FusionPBX with storage in cloud, encryption, and retention policy enforcement.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "call-history-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.173Z",
+  "updatedAt": "2026-01-16T18:33:24.606Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:14:43.521Z"
+}

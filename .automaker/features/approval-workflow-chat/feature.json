@@ -1,0 +1,18 @@
+{
+  "id": "approval-workflow-chat",
+  "category": "Core",
+  "title": "Approval Workflow via Chat",
+  "description": "System allowing approvals to be requested and completed directly in chat conversations with inline approve/reject buttons and notification threading.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "unified-inbox-view",
+    "expense-workflow-engine"
+  ],
+  "createdAt": "2026-01-16T01:27:54.146Z",
+  "updatedAt": "2026-01-16T17:49:10.740Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:32:18.753Z"
+}

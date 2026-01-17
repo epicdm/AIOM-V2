@@ -1,0 +1,21 @@
+{
+  "id": "briefing-generator",
+  "category": "Core",
+  "title": "Daily Briefing Generator",
+  "description": "Service that generates personalized daily briefings using AIOM. Aggregates tasks, approvals, alerts, and contextual insights based on user role and current priorities.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "claude-api-client",
+    "odoo-query-tools",
+    "task-management-tools",
+    "financial-operation-tools",
+    "briefing-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.116Z",
+  "updatedAt": "2026-01-16T10:56:56.018Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T10:28:18.545Z"
+}

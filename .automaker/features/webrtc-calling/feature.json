@@ -1,0 +1,17 @@
+{
+  "id": "webrtc-calling",
+  "category": "UI",
+  "title": "WebRTC Web Calling",
+  "description": "Web-based VoIP calling using WebRTC with SIP.js for browser-to-SIP bridge enabling calls from web interface.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "complex",
+  "dependencies": [
+    "sip-provisioning-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.215Z",
+  "updatedAt": "2026-01-17T05:19:29.153Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T04:59:33.737Z"
+}

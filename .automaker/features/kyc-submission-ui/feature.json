@@ -1,0 +1,17 @@
+{
+  "id": "kyc-submission-ui",
+  "category": "Mobile",
+  "title": "KYC Submission UI",
+  "description": "Mobile interface for submitting KYC documents with photo capture, document type selection, and personal information form.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "kyc-verification-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.193Z",
+  "updatedAt": "2026-01-16T19:31:40.524Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:16:15.824Z"
+}

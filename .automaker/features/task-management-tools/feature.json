@@ -1,0 +1,18 @@
+{
+  "id": "task-management-tools",
+  "category": "Core",
+  "title": "Task Management AIOM Tools",
+  "description": "Tools for creating, updating, assigning, and querying tasks through natural language. Includes smart scheduling, priority setting, and dependency management.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "aiom-tool-registry",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.114Z",
+  "updatedAt": "2026-01-16T10:27:57.869Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T10:05:17.431Z"
+}

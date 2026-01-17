@@ -1,0 +1,18 @@
+{
+  "id": "expense-voucher-form",
+  "category": "UI",
+  "title": "Expense Voucher Form",
+  "description": "Form for recording expense vouchers with receipt attachment, GL account selection, and reconciliation linking to expense requests.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "expense-voucher-schema",
+    "receipt-capture-component"
+  ],
+  "createdAt": "2026-01-16T01:27:54.136Z",
+  "updatedAt": "2026-01-16T07:42:13.454Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T07:04:44.945Z"
+}

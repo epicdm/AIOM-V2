@@ -1,0 +1,18 @@
+{
+  "id": "scheduled-briefing-job",
+  "category": "Core",
+  "title": "Scheduled Briefing Job",
+  "description": "Cron job service that generates and delivers daily briefings at configured times per user. Handles timezone conversions and delivery preferences.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "briefing-generator",
+    "push-notification-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.119Z",
+  "updatedAt": "2026-01-16T17:31:54.901Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:26:50.616Z"
+}

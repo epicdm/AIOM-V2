@@ -1,0 +1,18 @@
+{
+  "id": "call-context-ui",
+  "category": "Mobile",
+  "title": "Call Context UI",
+  "description": "Mobile UI displaying customer context during active calls with swipeable cards showing history, status, and recommended actions.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "call-context-service",
+    "linphone-integration"
+  ],
+  "createdAt": "2026-01-16T01:27:54.176Z",
+  "updatedAt": "2026-01-16T10:04:49.382Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T09:47:45.424Z"
+}

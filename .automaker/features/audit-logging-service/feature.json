@@ -1,0 +1,17 @@
+{
+  "id": "audit-logging-service",
+  "category": "Core",
+  "title": "Audit Logging Service",
+  "description": "Service automatically logging significant actions (approvals, transfers, role changes) with tamper-proof storage and retention policies.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "audit-log-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.206Z",
+  "updatedAt": "2026-01-16T18:32:11.283Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:13:35.829Z"
+}

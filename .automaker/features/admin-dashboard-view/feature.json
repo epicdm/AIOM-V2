@@ -1,0 +1,18 @@
+{
+  "id": "admin-dashboard-view",
+  "category": "UI",
+  "title": "Admin Dashboard",
+  "description": "Admin dashboard showing pending expense approvals, document processing queue, system health, user management, and operational workflows.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "role-dashboard-layout-config",
+    "dashboard-widget-registry"
+  ],
+  "createdAt": "2026-01-16T01:27:54.124Z",
+  "updatedAt": "2026-01-16T09:18:25.466Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T09:00:23.191Z"
+}

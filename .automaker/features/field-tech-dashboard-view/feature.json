@@ -1,0 +1,19 @@
+{
+  "id": "field-tech-dashboard-view",
+  "category": "UI",
+  "title": "Field Technician Dashboard",
+  "description": "Dashboard for field technicians with assigned work orders, route optimization, inventory checks, customer site history, and mobile-friendly actions.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "role-dashboard-layout-config",
+    "dashboard-widget-registry",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.123Z",
+  "updatedAt": "2026-01-16T09:21:50.715Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T09:00:24.859Z"
+}

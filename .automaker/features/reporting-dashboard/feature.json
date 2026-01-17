@@ -1,0 +1,18 @@
+{
+  "id": "reporting-dashboard",
+  "category": "UI",
+  "title": "Executive Reporting Dashboard",
+  "description": "Comprehensive reporting dashboard with customizable charts, KPI tracking, export capabilities, and scheduled report delivery.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [
+    "odoo-financial-queries",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.217Z",
+  "updatedAt": "2026-01-17T04:59:04.785Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T04:35:41.540Z"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "linphone-integration",
+  "category": "Mobile",
+  "title": "Linphone SDK Integration",
+  "description": "Android integration with Linphone SDK for VoIP calling including call state management, audio routing, DTMF, and call history.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "sip-provisioning-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.170Z",
+  "updatedAt": "2026-01-16T09:45:07.785Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T09:22:19.892Z"
+}

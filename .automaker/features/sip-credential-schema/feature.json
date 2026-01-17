@@ -1,0 +1,15 @@
+{
+  "id": "sip-credential-schema",
+  "category": "Database",
+  "title": "SIP Credential Schema",
+  "description": "Schema storing SIP credentials per user with username, password, server address, and provisioning status. Includes encryption for sensitive fields.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.167Z",
+  "updatedAt": "2026-01-16T08:00:46.985Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T07:42:34.665Z"
+}

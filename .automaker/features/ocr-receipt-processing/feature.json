@@ -1,0 +1,17 @@
+{
+  "id": "ocr-receipt-processing",
+  "category": "API",
+  "title": "OCR Receipt Processing",
+  "description": "Integration with OCR service (Textract/Tesseract) to extract amount, vendor, date from receipt images. Includes validation and manual correction interface.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "complex",
+  "dependencies": [
+    "receipt-capture-component"
+  ],
+  "createdAt": "2026-01-16T01:27:54.135Z",
+  "updatedAt": "2026-01-16T19:47:32.458Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:31:16.278Z"
+}

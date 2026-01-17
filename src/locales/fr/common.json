@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "settings": "Paramètres",
+    "pricing": "Tarifs",
+    "overview": "Aperçu",
+    "signIn": "Connexion",
+    "signUp": "S'inscrire",
+    "signOut": "Déconnexion",
+    "profile": "Profil",
+    "account": "Compte"
+  },
+  "header": {
+    "brandName": "Full Stack Campus",
+    "toggleMenu": "Basculer le menu"
+  },
+  "footer": {
+    "copyright": "© {{year}} Full Stack Campus. Tous droits réservés.",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Transformez votre carrière",
+    "subtitle": "Devenez un ingénieur Full Stack",
+    "description": "Rejoignez notre communauté en ligne et apprenez à devenir un ingénieur full stack. Maîtrisez le développement frontend et backend, créez de vrais projets et lancez votre carrière en génie logiciel.",
+    "ctaPrimary": "Commencer",
+    "ctaSecondary": "En savoir plus"
+  },
+  "auth": {
+    "welcomeBack": "Bon retour",
+    "createAccount": "Créer un compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "rememberMe": "Se souvenir de moi",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "orContinueWith": "Ou continuer avec",
+    "signingIn": "Connexion en cours...",
+    "signingUp": "Création du compte..."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "submit": "Soumettre",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "actions": "Actions",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "success": "Succès",
+    "error": "Erreur",
+    "warning": "Avertissement",
+    "info": "Info"
+  },
+  "language": {
+    "select": "Choisir la langue",
+    "english": "English",
+    "french": "Français",
+    "spanish": "Español",
+    "current": "Actuelle : {{language}}"
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "notFound": "Page non trouvée",
+    "unauthorized": "Vous n'êtes pas autorisé à voir cette page",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion."
+  }
+}

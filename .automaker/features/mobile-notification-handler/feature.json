@@ -1,0 +1,17 @@
+{
+  "id": "mobile-notification-handler",
+  "category": "Mobile",
+  "title": "Mobile Notification Handler",
+  "description": "Android service handling incoming push notifications with notification display, action buttons, and deep linking to relevant screens.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "fcm-push-integration"
+  ],
+  "createdAt": "2026-01-16T01:27:54.200Z",
+  "updatedAt": "2026-01-16T04:19:46.935Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:11:13.201Z"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "proactive-monitoring-engine",
+  "category": "Core",
+  "title": "Proactive Monitoring Engine",
+  "description": "Background service running periodic health checks on tasks, expenses, financial position, customer issues, and team capacity. Generates alerts for anomalies.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "complex",
+  "dependencies": [
+    "claude-api-client",
+    "odoo-query-tools",
+    "financial-operation-tools"
+  ],
+  "createdAt": "2026-01-16T01:27:54.154Z",
+  "updatedAt": "2026-01-16T20:14:32.434Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:58:00.150Z"
+}

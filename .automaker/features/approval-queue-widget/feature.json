@@ -1,0 +1,17 @@
+{
+  "id": "approval-queue-widget",
+  "category": "UI",
+  "title": "Approval Queue Widget",
+  "description": "Widget showing pending approvals requiring user action with one-click approve/reject, details preview, and urgency indicators.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "dashboard-widget-registry"
+  ],
+  "createdAt": "2026-01-16T01:27:54.128Z",
+  "updatedAt": "2026-01-16T17:30:44.509Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:26:51.969Z"
+}

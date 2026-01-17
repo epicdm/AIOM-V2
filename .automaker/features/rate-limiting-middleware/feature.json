@@ -1,0 +1,17 @@
+{
+  "id": "rate-limiting-middleware",
+  "category": "API",
+  "title": "Rate Limiting Middleware",
+  "description": "Middleware implementing rate limiting on sensitive endpoints (auth, transfers, OTP) using Redis-backed token bucket algorithm.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "redis-cache-layer"
+  ],
+  "createdAt": "2026-01-16T01:27:54.203Z",
+  "updatedAt": "2026-01-16T23:54:38.683Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T23:30:21.509Z"
+}

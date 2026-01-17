@@ -1,0 +1,21 @@
+{
+  "id": "odoo-query-tools",
+  "category": "Core",
+  "title": "Odoo Query AIOM Tools",
+  "description": "Claude tool implementations for querying Odoo data (tasks, projects, customers, financials). Converts natural language queries into structured Odoo API calls.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "aiom-tool-registry",
+    "odoo-task-queries",
+    "odoo-project-queries",
+    "odoo-partner-queries",
+    "odoo-financial-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.113Z",
+  "updatedAt": "2026-01-16T06:24:04.742Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T06:04:28.166Z"
+}

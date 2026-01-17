@@ -1,0 +1,15 @@
+{
+  "id": "briefing-schema",
+  "category": "Database",
+  "title": "Daily Briefing Schema",
+  "description": "Database tables for storing generated daily briefings with user_id, generation timestamp, content JSON, read status, and expiration. Supports versioning and regeneration.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.106Z",
+  "updatedAt": "2026-01-16T01:54:24.085Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:33.265Z"
+}

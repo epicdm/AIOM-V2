@@ -1,0 +1,15 @@
+{
+  "id": "role-based-schema",
+  "category": "Database",
+  "title": "User Role Schema Extension",
+  "description": "Database schema extension adding role field to users table with enum values (md, field-tech, admin, sales). Includes role assignment and verification functions.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.105Z",
+  "updatedAt": "2026-01-16T07:58:04.457Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T07:42:32.544Z"
+}

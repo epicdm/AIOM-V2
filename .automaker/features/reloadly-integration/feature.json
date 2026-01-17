@@ -1,0 +1,15 @@
+{
+  "id": "reloadly-integration",
+  "category": "API",
+  "title": "Reloadly API Integration",
+  "description": "Integration with Reloadly for mobile airtime and data top-ups. Handles operator detection, product listing, and transaction processing.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.183Z",
+  "updatedAt": "2026-01-16T07:04:18.164Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T06:47:45.498Z"
+}

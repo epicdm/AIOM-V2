@@ -1,0 +1,17 @@
+{
+  "id": "tenant-middleware",
+  "category": "API",
+  "title": "Tenant Isolation Middleware",
+  "description": "Middleware ensuring all queries are scoped to current tenant with automatic tenant_id injection and cross-tenant access prevention.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [
+    "tenant-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.211Z",
+  "updatedAt": "2026-01-17T05:15:28.782Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T04:59:30.100Z"
+}

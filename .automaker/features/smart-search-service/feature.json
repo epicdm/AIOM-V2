@@ -1,0 +1,18 @@
+{
+  "id": "smart-search-service",
+  "category": "Core",
+  "title": "Smart Search Service",
+  "description": "AI-powered unified search across tasks, contacts, messages, expenses, and documents with natural language understanding and relevance ranking.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "complex",
+  "dependencies": [
+    "claude-api-client",
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.221Z",
+  "updatedAt": "2026-01-17T00:35:50.051Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T00:16:44.544Z"
+}

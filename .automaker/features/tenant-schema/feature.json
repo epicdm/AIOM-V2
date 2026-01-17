@@ -1,0 +1,15 @@
+{
+  "id": "tenant-schema",
+  "category": "Database",
+  "title": "Multi-Tenant Schema",
+  "description": "Schema extension adding tenant_id to all relevant tables for multi-tenant data isolation with row-level security policies.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "complex",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.210Z",
+  "updatedAt": "2026-01-17T04:46:15.817Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T04:35:42.667Z"
+}

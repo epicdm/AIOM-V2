@@ -1,0 +1,17 @@
+{
+  "id": "kyc-verification-schema",
+  "category": "Database",
+  "title": "KYC Verification Schema",
+  "description": "Schema storing KYC data with identity document uploads, verification status, approval timestamps, and tier limits.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "wallet-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.192Z",
+  "updatedAt": "2026-01-16T19:15:55.631Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:57:46.443Z"
+}

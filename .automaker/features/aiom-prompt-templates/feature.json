@@ -1,0 +1,17 @@
+{
+  "id": "aiom-prompt-templates",
+  "category": "Core",
+  "title": "AIOM Prompt Templates",
+  "description": "Library of optimized prompt templates for different AIOM use cases (briefing generation, query answering, summarization) with caching for cost efficiency.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "claude-api-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.153Z",
+  "updatedAt": "2026-01-16T02:41:14.068Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T02:16:20.596Z"
+}

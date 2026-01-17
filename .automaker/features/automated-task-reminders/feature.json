@@ -1,0 +1,18 @@
+{
+  "id": "automated-task-reminders",
+  "category": "Core",
+  "title": "Automated Task Reminders",
+  "description": "Service sending smart reminders for upcoming and overdue tasks with context-aware timing and escalation to supervisors.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "push-notification-service",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.161Z",
+  "updatedAt": "2026-01-16T18:26:05.468Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:06:54.196Z"
+}

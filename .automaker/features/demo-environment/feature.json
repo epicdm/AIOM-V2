@@ -1,0 +1,15 @@
+{
+  "id": "demo-environment",
+  "category": "Core",
+  "title": "Demo/Sandbox Environment",
+  "description": "Isolated sandbox environment with synthetic data for demonstrations and testing without affecting production data.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.214Z",
+  "updatedAt": "2026-01-17T04:35:17.652Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T03:54:29.959Z"
+}

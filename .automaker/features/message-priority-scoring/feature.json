@@ -1,0 +1,18 @@
+{
+  "id": "message-priority-scoring",
+  "category": "Core",
+  "title": "Message Priority Scoring",
+  "description": "AI-powered service scoring message importance based on sender, content, keywords, and user context to surface critical communications.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "claude-api-client",
+    "unified-inbox-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.147Z",
+  "updatedAt": "2026-01-16T19:18:10.460Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:57:50.461Z"
+}

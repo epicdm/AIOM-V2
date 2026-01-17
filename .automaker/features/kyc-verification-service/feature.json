@@ -1,0 +1,18 @@
+{
+  "id": "kyc-verification-service",
+  "category": "Core",
+  "title": "KYC Verification Service",
+  "description": "Service for reviewing KYC submissions with document verification, approval workflow, and transaction limit updates.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "kyc-verification-schema",
+    "wallet-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.194Z",
+  "updatedAt": "2026-01-16T19:30:45.434Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:16:18.449Z"
+}

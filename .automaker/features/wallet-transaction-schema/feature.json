@@ -1,0 +1,17 @@
+{
+  "id": "wallet-transaction-schema",
+  "category": "Database",
+  "title": "Wallet Transaction Schema",
+  "description": "Schema for wallet transactions with type (credit, debit, transfer, top-up), amount, status, reference, and timestamp. Supports idempotency.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "wallet-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.181Z",
+  "updatedAt": "2026-01-16T17:28:42.765Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:26:51.168Z"
+}

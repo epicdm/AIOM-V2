@@ -1,0 +1,17 @@
+{
+  "id": "voice-input-component",
+  "category": "UI",
+  "title": "Voice Input Component",
+  "description": "Component enabling voice queries using Web Speech API with speech-to-text conversion, voice activity detection, and push-to-talk mode.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "natural-language-query-interface"
+  ],
+  "createdAt": "2026-01-16T01:27:54.152Z",
+  "updatedAt": "2026-01-17T02:21:22.676Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T02:12:15.584Z"
+}

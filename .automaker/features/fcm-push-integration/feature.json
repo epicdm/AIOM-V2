@@ -1,0 +1,17 @@
+{
+  "id": "fcm-push-integration",
+  "category": "API",
+  "title": "Firebase FCM Integration",
+  "description": "Integration with Firebase Cloud Messaging for mobile push notifications including device token registration and message delivery.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "push-notification-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.199Z",
+  "updatedAt": "2026-01-16T02:36:40.514Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T02:06:57.786Z"
+}

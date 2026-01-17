@@ -1,0 +1,17 @@
+{
+  "id": "feature-flag-service",
+  "category": "Core",
+  "title": "Feature Flag Service",
+  "description": "Service evaluating feature flags for gradual rollout and A/B testing with user targeting and real-time toggle updates.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "feature-flag-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.208Z",
+  "updatedAt": "2026-01-16T18:56:31.153Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:44:59.203Z"
+}

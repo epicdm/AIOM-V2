@@ -1,0 +1,18 @@
+{
+  "id": "expense-gl-posting",
+  "category": "API",
+  "title": "Expense GL Posting Integration",
+  "description": "Integration with Odoo accounting to automatically post approved and reconciled expenses to general ledger with proper account coding and journal entries.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "expense-workflow-engine",
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.140Z",
+  "updatedAt": "2026-01-16T18:37:20.254Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:28:04.586Z"
+}

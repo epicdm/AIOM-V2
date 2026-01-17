@@ -1,0 +1,15 @@
+{
+  "id": "redis-cache-layer",
+  "category": "API",
+  "title": "Redis Cache Layer",
+  "description": "Redis integration for caching frequently accessed data (user sessions, Odoo queries, AIOM responses) with TTL management.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.201Z",
+  "updatedAt": "2026-01-16T23:29:55.974Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T23:16:32.032Z"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "financial-summary-widget",
+  "category": "UI",
+  "title": "Financial Summary Widget",
+  "description": "Widget displaying key financial metrics (cash position, AP/AR aging, burn rate) with trend indicators and drill-down capabilities.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "dashboard-widget-registry",
+    "odoo-financial-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.129Z",
+  "updatedAt": "2026-01-16T18:59:09.277Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:45:02.030Z"
+}

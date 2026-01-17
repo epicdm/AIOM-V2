@@ -1,0 +1,17 @@
+{
+  "id": "expense-approval-interface",
+  "category": "UI",
+  "title": "Expense Approval Interface",
+  "description": "Interface for approvers to review expense requests with context display, approval/rejection actions, and comment capability.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "expense-request-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.133Z",
+  "updatedAt": "2026-01-16T02:20:46.768Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:58:35.573Z"
+}

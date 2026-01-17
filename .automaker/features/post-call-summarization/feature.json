@@ -1,0 +1,18 @@
+{
+  "id": "post-call-summarization",
+  "category": "Core",
+  "title": "Post-Call Summarization",
+  "description": "Service using AIOM to generate call summaries from recordings/notes including key points, action items, and sentiment analysis.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "call-recording-service",
+    "claude-api-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.177Z",
+  "updatedAt": "2026-01-16T19:59:49.836Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:42:32.269Z"
+}

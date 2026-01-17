@@ -1,0 +1,17 @@
+{
+  "id": "qr-scanner-ui",
+  "category": "Mobile",
+  "title": "QR Scanner UI",
+  "description": "Mobile camera interface for scanning payment QR codes with amount preview, confirmation, and receipt display.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "qr-payment-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.191Z",
+  "updatedAt": "2026-01-16T23:16:06.683Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T23:05:53.046Z"
+}

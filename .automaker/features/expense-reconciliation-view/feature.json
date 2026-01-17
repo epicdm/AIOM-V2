@@ -1,0 +1,18 @@
+{
+  "id": "expense-reconciliation-view",
+  "category": "UI",
+  "title": "Expense Reconciliation View",
+  "description": "Interface showing expense requests matched with vouchers, highlighting discrepancies, and providing tools for manual reconciliation.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "expense-request-schema",
+    "expense-voucher-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.141Z",
+  "updatedAt": "2026-01-16T18:57:21.338Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:33:57.942Z"
+}

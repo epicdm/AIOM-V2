@@ -1,0 +1,17 @@
+{
+  "id": "phone-number-onboarding",
+  "category": "Authentication",
+  "title": "Phone Number Onboarding",
+  "description": "Mobile onboarding flow collecting phone number, sending OTP verification, and linking to user account with SIP credential provisioning.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "mobile-auth-integration"
+  ],
+  "createdAt": "2026-01-16T01:27:54.166Z",
+  "updatedAt": "2026-01-16T06:23:07.237Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T05:48:20.700Z"
+}

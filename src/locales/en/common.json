@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "pricing": "Pricing",
+    "overview": "Overview",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Log out",
+    "profile": "Profile",
+    "account": "Account"
+  },
+  "header": {
+    "brandName": "Full Stack Campus",
+    "toggleMenu": "Toggle Menu"
+  },
+  "footer": {
+    "copyright": "© {{year}} Full Stack Campus. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Transform Your Career",
+    "subtitle": "Become a Full Stack Engineer",
+    "description": "Join our online community and learn how to become a full stack engineer. Master frontend and backend development, build real projects, and launch your software engineering career.",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Learn More"
+  },
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "createAccount": "Create an account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot password?",
+    "rememberMe": "Remember me",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "orContinueWith": "Or continue with",
+    "signingIn": "Signing in...",
+    "signingUp": "Creating account..."
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "actions": "Actions",
+    "close": "Close",
+    "confirm": "Confirm",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info"
+  },
+  "language": {
+    "select": "Select Language",
+    "english": "English",
+    "french": "Français",
+    "spanish": "Español",
+    "current": "Current: {{language}}"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "notFound": "Page not found",
+    "unauthorized": "You are not authorized to view this page",
+    "networkError": "Network error. Please check your connection."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "communication-analytics",
+  "category": "Core",
+  "title": "Communication Analytics",
+  "description": "Analytics tracking response times, message volumes, and communication patterns to identify bottlenecks and optimize team collaboration.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [
+    "unified-inbox-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.148Z",
+  "updatedAt": "2026-01-17T03:37:26.190Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T03:17:30.544Z"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "outstanding-voucher-alerts",
+  "category": "Core",
+  "title": "Outstanding Voucher Alerts",
+  "description": "Service that monitors expenses awaiting receipts and sends reminder notifications. Escalates overdue reconciliations to approvers.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "expense-workflow-engine",
+    "push-notification-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.138Z",
+  "updatedAt": "2026-01-16T19:57:34.178Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:42:28.244Z"
+}

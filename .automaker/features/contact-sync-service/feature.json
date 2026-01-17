@@ -1,0 +1,18 @@
+{
+  "id": "contact-sync-service",
+  "category": "Mobile",
+  "title": "Contact Sync Service",
+  "description": "Service syncing Odoo contacts to mobile device with incremental updates, conflict resolution, and offline access.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "odoo-partner-queries",
+    "mobile-api-gateway"
+  ],
+  "createdAt": "2026-01-16T01:27:54.174Z",
+  "updatedAt": "2026-01-16T05:34:00.750Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:52:15.681Z"
+}

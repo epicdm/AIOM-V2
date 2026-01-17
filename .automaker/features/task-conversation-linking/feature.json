@@ -1,0 +1,18 @@
+{
+  "id": "task-conversation-linking",
+  "category": "Core",
+  "title": "Task-Conversation Linking",
+  "description": "Service linking conversations to tasks and projects. Automatically suggests relevant tasks during discussions and creates task threads.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "odoo-discuss-integration",
+    "odoo-task-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.145Z",
+  "updatedAt": "2026-01-17T01:22:39.457Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T01:03:38.790Z"
+}

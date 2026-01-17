@@ -1,0 +1,15 @@
+{
+  "id": "call-history-schema",
+  "category": "Database",
+  "title": "Call History Schema",
+  "description": "Schema storing call records with direction, duration, timestamp, caller ID, recording URL, and AI-generated summary.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.171Z",
+  "updatedAt": "2026-01-16T01:52:57.054Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:34.173Z"
+}

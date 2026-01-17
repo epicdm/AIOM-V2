@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project_specification>
+  <project_name>AIOM + EMA-PRO Platform</project_name>
+
+  <overview>
+    AIOM (AI Operations Manager) + EMA-PRO is an intelligent enterprise operations platform designed to solve ERP adoption friction for EPIC Communications, a 13-employee telecommunications company in Dominica. The platform bridges the gap between what Odoo ERP can do and what users actually experience daily, creating an AI-powered layer that makes complex enterprise operations feel intuitive.
+
+The core problem being solved is &quot;ERP fatigue&quot; - where users must actively hunt for their work, navigate fragmented communication across WhatsApp/email/Odoo, perform manual task management, and struggle with role confusion in cluttered interfaces. AIOM flips the traditional ERP model: instead of users going to the system, the system comes to users through smart daily briefings, role-based dashboards, unified communication hubs, automated task lifecycles, expense flow automation, contextual call intelligence, and natural language operations.
+
+The architecture follows a unified AI agent approach (not multi-agent orchestra) using Anthropic&apos;s Claude with rich tools for Odoo queries, financial operations, task management, communications, and workflow automation. The system includes both web and mobile (Android with Linphone SDK for VoIP) interfaces sharing a common API-first backend.
+
+Key goals include: proactive notifications instead of notification blindness, personalized daily operating views, unified communication eliminating WhatsApp/email fragmentation, automated task lifecycles reducing manual intervention, role-based interfaces showing relevant information per user function, streamlined expense workflows with receipt capture and approval automation, and contextual intelligence during customer calls.
+  </overview>
+
+  <technology_stack>
+    <technology>TanStack Start - Full-stack React framework with file-based routing</technology>
+    <technology>React 19 - UI library</technology>
+    <technology>TypeScript - Full type safety throughout</technology>
+    <technology>PostgreSQL - Primary database</technology>
+    <technology>Drizzle ORM - Type-safe database queries and migrations</technology>
+    <technology>Better Auth - Authentication with email/password and session management</technology>
+    <technology>Stripe - Subscription payments (Free/Basic/Pro tiers)</technology>
+    <technology>AWS S3/Cloudflare R2 - Cloud file storage with presigned URLs</technology>
+    <technology>TanStack Query - Server state management and caching</technology>
+    <technology>Tailwind CSS 4 - Utility-first styling</technology>
+    <technology>Radix UI - Accessible UI component primitives</technology>
+    <technology>React Hook Form - Form management with Zod validation</technology>
+    <technology>Zod - Runtime schema validation</technology>
+    <technology>Vite - Build tool and development server</technology>
+    <technology>Docker - PostgreSQL containerization</technology>
+    <technology>Lucide React - Icon library</technology>
+    <technology>date-fns - Date manipulation</technology>
+    <technology>sonner - Toast notifications</technology>
+    <technology>Anthropic Claude API - AI/LLM integration for AIOM</technology>
+    <technology>Linphone SDK - VoIP calling (Android mobile)</technology>
+    <technology>Kotlin/MVVM - Android mobile architecture</technology>
+    <technology>Firebase FCM - Push notifications</technology>
+    <technology>FastAPI - Backend API (planned for mobile/AIOM services)</technology>
+    <technology>Redis - Caching and job queues (planned)</technology>
+    <technology>Odoo XML-RPC API - ERP integration</technology>
+    <technology>FlexiSIP - SIP server for VoIP</technology>
+    <technology>FusionPBX - PBX management</technology>
+    <technology>Reloadly API - Mobile top-up services</technology>
+  </technology_stack>
+
+  <core_capabilities>
+    <capability>Smart Daily Briefing - AI-generated personalized morning briefings with tasks due, pending approvals, and alerts</capability>
+    <capability>Role-Based Dashboard Views - Customized interfaces for Managing Director, Field Technicians, Admin, and Sales roles</capability>
+    <capability>Unified Communication Hub - Odoo Discuss integration replacing fragmented WhatsApp/email communications</capability>
+    <capability>Automated Task Lifecycle - Trigger-based automation for task creation, reminders, escalations, and completion tracking</capability>
+    <capability>Expense Flow Automation - Complete expense lifecycle from request through approval, disbursement, receipt capture, reconciliation, and GL posting</capability>
+    <capability>Contextual Call Intelligence - Real-time customer context display during calls with post-call summarization and CRM auto-logging</capability>
+    <capability>Natural Language Operations - Voice and text queries for business operations (What do I owe vendors? Show me overdue tasks)</capability>
+    <capability>Community Posts with Categories - Create, comment, react with media attachments</capability>
+    <capability>User Profiles with Portfolio - Skill showcase and project portfolio management</capability>
+    <capability>Calendar Events - Community calendar with live sessions, workshops, meetups, assignments</capability>
+    <capability>Private Messaging - Direct conversations between community members</capability>
+    <capability>Members Directory - Search and connect with other community members</capability>
+    <capability>Real-time Notifications - Push notifications for comments, replies, mentions, approvals</capability>
+    <capability>Educational Modules - Classroom content with videos, tasks, PDFs, text, images</capability>
+    <capability>Subscription Management - Stripe-powered tiers with feature limits enforcement</capability>
+    <capability>File Upload System - Presigned URL uploads to S3/R2 with media preview</capability>
+    <capability>Admin Controls - Post pinning, module publishing, user management</capability>
+  </core_capabilities>
+
+  <implemented_features>
+    <feature>
+      <name>Authentication System</name>
+      <description>Complete email/password authentication using Better Auth with session management, CSRF protection, and secure password hashing. Includes sign-up, sign-in flows, and authenticated middleware for protected server functions.</description>
+      <file_locations>
+        <location>src/utils/auth.ts</location>
+        <location>src/lib/auth-client.ts</location>
+        <location>src/fn/middleware.ts</location>
+        <location>src/routes/sign-in.tsx</location>
+        <location>src/routes/sign-up.tsx</location>
+        <location>src/routes/api/auth/$.ts</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>User Profiles</name>
+      <description>Extended user profiles with bio information. Users can view and edit their profiles with avatar images.</description>
+      <file_locations>
+        <location>src/db/schema.ts</location>
+        <location>src/fn/profiles.ts</location>
+        <location>src/data-access/profiles.ts</location>
+        <location>src/hooks/useProfile.ts</location>
+        <location>src/routes/profile/$userId/index.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Community Posts System</name>
+      <description>Full-featured post system with categories (general, question, discussion, announcement, feedback, showcase), CRUD operations, soft delete, and admin post pinning.</description>
+      <file_locations>
+        <location>src/fn/posts.ts</location>
+        <location>src/data-access/posts.ts</location>
+        <location>src/hooks/usePosts.ts</location>
+        <location>src/components/PostForm.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Comments and Replies</name>
+      <description>Threaded comment system with nested replies, notifications to post/comment authors, soft delete, and edit functionality.</description>
+      <file_locations>
+        <location>src/fn/comments.ts</location>
+        <location>src/data-access/comments.ts</location>
+        <location>src/hooks/useComments.ts</location>
+        <location>src/components/CommentForm.tsx</location>
+        <location>src/components/CommentList.tsx</location>
+        <location>src/components/CommentItem.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Reactions System</name>
+      <description>Like/reaction toggle for both posts and comments with reaction counts and user reaction status tracking.</description>
+      <file_locations>
+        <location>src/fn/reactions.ts</location>
+        <location>src/data-access/reactions.ts</location>
+        <location>src/hooks/useReactions.ts</location>
+        <location>src/components/PostLikeButton.tsx</location>
+        <location>src/components/CommentLikeButton.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Calendar Events</name>
+      <description>Event management with types (live-session, workshop, meetup, assignment-due), date range queries, admin-only creation/editing.</description>
+      <file_locations>
+        <location>src/fn/events.ts</location>
+        <location>src/data-access/events.ts</location>
+        <location>src/hooks/useEvents.ts</location>
+        <location>src/components/Calendar.tsx</location>
+        <location>src/components/EventDialog.tsx</location>
+        <location>src/components/EventForm.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Private Messaging</name>
+      <description>Direct messaging between members with conversation management, message read status, unread counts.</description>
+      <file_locations>
+        <location>src/fn/messages.ts</location>
+        <location>src/fn/conversations.ts</location>
+        <location>src/data-access/messages.ts</location>
+        <location>src/data-access/conversations.ts</location>
+        <location>src/hooks/useMessages.ts</location>
+        <location>src/hooks/useConversations.ts</location>
+        <location>src/components/ChatView.tsx</location>
+        <location>src/components/MessageList.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Members Directory</name>
+      <description>Searchable member directory with pagination, filtering, and member cards showing profiles.</description>
+      <file_locations>
+        <location>src/fn/members.ts</location>
+        <location>src/data-access/members.ts</location>
+        <location>src/hooks/useMembers.ts</location>
+        <location>src/components/MemberCard.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Notifications System</name>
+      <description>In-app notifications for comments, replies, and other events with read/unread status and mark-all-as-read functionality.</description>
+      <file_locations>
+        <location>src/fn/notifications.ts</location>
+        <location>src/data-access/notifications.ts</location>
+        <location>src/hooks/useNotifications.ts</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Educational Modules</name>
+      <description>Admin-managed learning modules with content types (video, task, image, pdf, text), ordering, publish/draft status, and presigned URL file access.</description>
+      <file_locations>
+        <location>src/fn/modules.ts</location>
+        <location>src/data-access/modules.ts</location>
+        <location>src/hooks/useModules.ts</location>
+        <location>src/components/ModuleContentList.tsx</location>
+        <location>src/components/ModuleDialog.tsx</location>
+        <location>src/components/ModuleForm.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Portfolio Management</name>
+      <description>User portfolio items with title, description, image, URL, and technology tags. Full CRUD with ownership verification.</description>
+      <file_locations>
+        <location>src/fn/portfolio.ts</location>
+        <location>src/data-access/portfolio.ts</location>
+        <location>src/hooks/usePortfolio.ts</location>
+        <location>src/components/PortfolioItemCard.tsx</location>
+        <location>src/components/PortfolioItemForm.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Subscription System</name>
+      <description>Stripe-integrated subscription management with Free/Basic/Pro tiers, checkout sessions, customer portal, webhook handling, and feature limit enforcement.</description>
+      <file_locations>
+        <location>src/fn/subscriptions.ts</location>
+        <location>src/lib/plans.ts</location>
+        <location>src/lib/stripe.ts</location>
+        <location>src/hooks/useSubscription.ts</location>
+        <location>src/routes/api/stripe/webhook.ts</location>
+        <location>src/components/PricingSection.tsx</location>
+        <location>src/components/SubscriptionStatus.tsx</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>File Storage System</name>
+      <description>Cloud storage abstraction supporting AWS S3 and Cloudflare R2 with presigned upload/download URLs, media helpers, and attachment management.</description>
+      <file_locations>
+        <location>src/utils/storage/r2.ts</location>
+        <location>src/utils/storage/storage.interface.ts</location>
+        <location>src/utils/storage/helpers.ts</location>
+        <location>src/fn/storage.ts</location>
+        <location>src/fn/attachments.ts</location>
+        <location>src/hooks/useStorage.ts</location>
+        <location>src/hooks/useAttachments.ts</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>UI Component Library</name>
+      <description>Comprehensive Radix UI-based component library with accordion, alert-dialog, avatar, badge, breadcrumb, button, card, checkbox, dialog, dropdown-menu, form, input, select, sheet, slider, switch, textarea, tooltip components.</description>
+      <file_locations>
+        <location>src/components/ui/</location>
+      </file_locations>
+    </feature>
+    <feature>
+      <name>Landing Page</name>
+      <description>Marketing landing page with hero section, salary statistics, benefits, curriculum, testimonials, community section, how-it-works, pricing, FAQ, and CTA sections with structured SEO data.</description>
+      <file_locations>
+        <location>src/routes/index.tsx</location>
+        <location>src/components/Hero.tsx</location>
+        <location>src/components/SalaryStatsSection.tsx</location>
+        <location>src/components/BenefitsSection.tsx</location>
+        <location>src/components/CurriculumSection.tsx</location>
+        <location>src/components/PricingSection.tsx</location>
+        <location>src/components/FAQSection.tsx</location>
+      </file_locations>
+    </feature>
+  </implemented_features>
+
+  <additional_requirements>
+    <requirement>PostgreSQL 15+ with Docker containerization</requirement>
+    <requirement>Node.js 18+ runtime</requirement>
+    <requirement>Stripe account with test/production API keys</requirement>
+    <requirement>AWS S3 or Cloudflare R2 bucket for file storage</requirement>
+    <requirement>Anthropic API key for Claude integration</requirement>
+    <requirement>FlexiSIP server for VoIP services</requirement>
+    <requirement>FusionPBX for PBX management</requirement>
+    <requirement>Odoo instance with XML-RPC API access</requirement>
+    <requirement>Firebase project for mobile push notifications</requirement>
+    <requirement>Android Studio for mobile development</requirement>
+    <requirement>Linphone SDK license for VoIP integration</requirement>
+    <requirement>Reloadly API credentials for mobile top-up</requirement>
+    <requirement>Environment variables: DATABASE_URL, BETTER_AUTH_SECRET, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, R2_ENDPOINT, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY</requirement>
+    <requirement>HTTPS required for production deployment</requirement>
+    <requirement>Webhook endpoints must be publicly accessible for Stripe callbacks</requirement>
+  </additional_requirements>
+
+  <development_guidelines>
+    <guideline>Follow layered architecture: Routes → Components → Hooks → Queries → Fn → Use Cases → Data Access</guideline>
+    <guideline>Never skip layers - each layer should only depend on the layer immediately below it</guideline>
+    <guideline>Apply authenticatedMiddleware to all protected server functions</guideline>
+    <guideline>Use Zod schemas for all input validation on server functions</guideline>
+    <guideline>Use TanStack Query with custom hooks pattern for data fetching</guideline>
+    <guideline>Keep business logic in use-cases layer, not in server functions</guideline>
+    <guideline>Use soft delete (deletedAt) for posts and comments to preserve data integrity</guideline>
+    <guideline>Generate UUIDs for all primary keys using crypto.randomUUID()</guideline>
+    <guideline>Store timestamps in UTC, convert to user timezone at display time</guideline>
+    <guideline>Use presigned URLs for all file uploads - never upload directly through server</guideline>
+    <guideline>Apply admin middleware (assertAdminMiddleware) for admin-only operations</guideline>
+    <guideline>Include audit logging for all significant data changes</guideline>
+    <guideline>Implement offline-first patterns for mobile with local queue and sync</guideline>
+    <guideline>Use feature flags for gradual rollout and A/B testing</guideline>
+    <guideline>Follow error code taxonomy: EMA-[MODULE]-[CATEGORY]-[SPECIFIC]</guideline>
+    <guideline>Cache system prompts for AIOM to reduce token costs</guideline>
+    <guideline>Design tools as atomic and composable for AI agent use</guideline>
+    <guideline>Use TypeScript strict mode with full type inference from Drizzle schema</guideline>
+    <guideline>Implement rate limiting on sensitive operations (OTP, login, transfers)</guideline>
+    <guideline>Build multi-tenant ready with tenant_id scoping on all data</guideline>
+  </development_guidelines>
+
+  <implementation_roadmap>
+    <phase>
+      <name>Phase 0: Shared Foundation</name>
+      <status>completed</status>
+      <description>Core web platform foundation with authentication, database schema, file storage, subscription system, and layered architecture. TanStack Start framework configured with all base components.</description>
+    </phase>
+    <phase>
+      <name>Phase 1: Community Platform</name>
+      <status>completed</status>
+      <description>Community features including posts with categories, comments/replies, reactions, members directory, private messaging, notifications, user profiles with portfolio, and educational modules.</description>
+    </phase>
+    <phase>
+      <name>Phase 2: Daily Operations (Web)</name>
+      <status>pending</status>
+      <description>Smart Daily Briefing push notification system, role-based home screen dashboards (MD, Field Tech, Admin, Sales views), Odoo integration for task/project queries.</description>
+    </phase>
+    <phase>
+      <name>Phase 3: Expense Automation</name>
+      <status>pending</status>
+      <description>Complete expense lifecycle: quick receipt capture with OCR, approval workflows via notifications, outstanding voucher alerts, auto-reconciliation, GL posting integration.</description>
+    </phase>
+    <phase>
+      <name>Phase 4: Communication Unification</name>
+      <status>pending</status>
+      <description>Odoo Discuss integration in web chat, task-linked conversations, approval workflows via push notification, unified inbox replacing WhatsApp/email fragmentation.</description>
+    </phase>
+    <phase>
+      <name>Phase 5: AIOM Intelligence Core</name>
+      <status>pending</status>
+      <description>Anthropic Claude integration with tool layer (Odoo query, financials, operations, communications, workflow tools). Natural language queries, automated task reminders, expense compliance monitoring, proactive health checks.</description>
+    </phase>
+    <phase>
+      <name>Phase 6: Mobile Core (Android)</name>
+      <status>pending</status>
+      <description>Android app with Linphone SDK VoIP, phone number onboarding with OTP, SIP credential provisioning, calling/contact sync, push notification handling, offline queue with sync.</description>
+    </phase>
+    <phase>
+      <name>Phase 7: Call Intelligence</name>
+      <status>pending</status>
+      <description>Inbound/outbound call context display, customer history during calls, post-call summarization with AIOM, CRM auto-logging, recommended actions and talking points.</description>
+    </phase>
+    <phase>
+      <name>Phase 8: Wallet &amp; Top-up</name>
+      <status>pending</status>
+      <description>Digital wallet with balance management, Reloadly API integration for mobile top-ups, QR payments, transaction history, KYC verification for higher limits.</description>
+    </phase>
+    <phase>
+      <name>Phase 9: Proactive Operations</name>
+      <status>pending</status>
+      <description>AIOM proactive monitoring engine with health checks (overdue tasks, pending expenses, cash position, customer issues, team capacity), automated alerting, daily ops reports.</description>
+    </phase>
+    <phase>
+      <name>Phase 10: Enterprise Readiness</name>
+      <status>pending</status>
+      <description>Multi-tenant architecture, data export/portability, full localization framework (English, French, Spanish), demo/sandbox environment, advanced anomaly detection, WebRTC for web calling.</description>
+    </phase>
+  </implementation_roadmap>
+</project_specification>

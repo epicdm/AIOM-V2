@@ -1,0 +1,15 @@
+{
+  "id": "feature-flag-schema",
+  "category": "Database",
+  "title": "Feature Flag Schema",
+  "description": "Schema for feature flags with flag name, enabled status, user/role targeting, and percentage rollout configuration.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.207Z",
+  "updatedAt": "2026-01-16T18:44:32.020Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T18:33:59.374Z"
+}

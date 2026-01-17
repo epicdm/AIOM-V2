@@ -1,0 +1,17 @@
+{
+  "id": "odoo-discuss-integration",
+  "category": "API",
+  "title": "Odoo Discuss API Integration",
+  "description": "Integration with Odoo Discuss module for fetching channels, messages, and posting new messages. Includes real-time subscription via long-polling.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.142Z",
+  "updatedAt": "2026-01-16T02:54:38.949Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T02:23:10.905Z"
+}

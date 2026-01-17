@@ -1,0 +1,17 @@
+{
+  "id": "expense-request-form",
+  "category": "UI",
+  "title": "Expense Request Form",
+  "description": "Form component for creating expense requests with amount, purpose, urgency, and supporting documentation. Includes validation and submission workflow.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "expense-request-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.131Z",
+  "updatedAt": "2026-01-16T02:22:47.132Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:58:37.595Z"
+}

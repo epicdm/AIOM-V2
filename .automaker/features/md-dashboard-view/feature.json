@@ -1,0 +1,19 @@
+{
+  "id": "md-dashboard-view",
+  "category": "UI",
+  "title": "Managing Director Dashboard",
+  "description": "Specialized dashboard for MD role showing financial overview, pending approvals, team capacity, key metrics, and executive briefing. Focus on strategic visibility.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "role-dashboard-layout-config",
+    "dashboard-widget-registry",
+    "odoo-financial-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.122Z",
+  "updatedAt": "2026-01-16T09:47:20.407Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T09:22:22.112Z"
+}

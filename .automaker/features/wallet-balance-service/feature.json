@@ -1,0 +1,18 @@
+{
+  "id": "wallet-balance-service",
+  "category": "Core",
+  "title": "Wallet Balance Service",
+  "description": "Service managing wallet balances with atomic operations, balance locking during transactions, and overdraft prevention.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "wallet-schema",
+    "wallet-transaction-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.182Z",
+  "updatedAt": "2026-01-16T17:42:59.168Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T17:31:09.322Z"
+}

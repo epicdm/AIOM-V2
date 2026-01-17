@@ -1,0 +1,17 @@
+{
+  "id": "odoo-task-queries",
+  "category": "API",
+  "title": "Odoo Task Query Service",
+  "description": "Service layer for querying Odoo tasks with filters for assigned user, due dates, status, and project. Returns normalized task data for display in AIOM dashboards.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.099Z",
+  "updatedAt": "2026-01-16T05:44:39.736Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T05:34:26.645Z"
+}

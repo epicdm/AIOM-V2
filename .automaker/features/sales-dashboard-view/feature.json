@@ -1,0 +1,19 @@
+{
+  "id": "sales-dashboard-view",
+  "category": "UI",
+  "title": "Sales Dashboard",
+  "description": "Sales-focused dashboard with pipeline visibility, customer interactions, quotation status, revenue targets, and opportunity tracking.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "role-dashboard-layout-config",
+    "dashboard-widget-registry",
+    "odoo-partner-queries"
+  ],
+  "createdAt": "2026-01-16T01:27:54.125Z",
+  "updatedAt": "2026-01-16T10:02:00.168Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T09:47:47.659Z"
+}

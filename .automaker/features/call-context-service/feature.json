@@ -1,0 +1,18 @@
+{
+  "id": "call-context-service",
+  "category": "Core",
+  "title": "Call Context Service",
+  "description": "Service fetching customer context during incoming/outgoing calls including account status, recent interactions, open tickets, and suggested talking points.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [
+    "odoo-partner-queries",
+    "call-history-schema"
+  ],
+  "createdAt": "2026-01-16T01:27:54.175Z",
+  "updatedAt": "2026-01-16T05:09:48.512Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T04:52:12.692Z"
+}

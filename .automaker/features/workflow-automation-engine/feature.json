@@ -1,0 +1,18 @@
+{
+  "id": "workflow-automation-engine",
+  "category": "Core",
+  "title": "Workflow Automation Engine",
+  "description": "General-purpose workflow engine supporting multi-step automations with conditions, branches, and actions across Odoo and AIOM systems.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "complex",
+  "dependencies": [
+    "odoo-xmlrpc-client",
+    "push-notification-service"
+  ],
+  "createdAt": "2026-01-16T01:27:54.163Z",
+  "updatedAt": "2026-01-17T02:51:22.919Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T02:21:48.405Z"
+}

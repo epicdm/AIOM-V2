@@ -1,0 +1,18 @@
+{
+  "id": "task-auto-creation-rules",
+  "category": "Core",
+  "title": "Task Auto-Creation Rules",
+  "description": "Rule engine for automatically creating tasks based on triggers (new customer, overdue invoice, low inventory). Supports custom rule definitions.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [
+    "odoo-task-queries",
+    "odoo-xmlrpc-client"
+  ],
+  "createdAt": "2026-01-16T01:27:54.162Z",
+  "updatedAt": "2026-01-17T01:03:14.884Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T00:36:22.642Z"
+}

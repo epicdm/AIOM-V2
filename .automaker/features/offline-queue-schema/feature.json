@@ -1,0 +1,15 @@
+{
+  "id": "offline-queue-schema",
+  "category": "Database",
+  "title": "Offline Queue Schema",
+  "description": "Local mobile database schema for queuing actions while offline with operation type, payload, retry count, and sync status.",
+  "status": "verified",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.197Z",
+  "updatedAt": "2026-01-16T01:58:06.703Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T01:43:43.273Z"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "alert-feed-widget",
+  "category": "UI",
+  "title": "Alert Feed Widget",
+  "description": "Widget showing prioritized alerts and notifications with severity levels, acknowledgment tracking, and action links.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "dashboard-widget-registry"
+  ],
+  "createdAt": "2026-01-16T01:27:54.130Z",
+  "updatedAt": "2026-01-16T12:45:33.190Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T12:31:26.335Z"
+}

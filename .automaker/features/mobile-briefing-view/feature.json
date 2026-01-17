@@ -1,0 +1,18 @@
+{
+  "id": "mobile-briefing-view",
+  "category": "Mobile",
+  "title": "Mobile Daily Briefing View",
+  "description": "Mobile-optimized view for daily briefings with expandable sections, quick actions, and swipe gestures for task management.",
+  "status": "verified",
+  "priority": 2,
+  "complexity": "simple",
+  "dependencies": [
+    "briefing-generator",
+    "mobile-api-gateway"
+  ],
+  "createdAt": "2026-01-16T01:27:54.220Z",
+  "updatedAt": "2026-01-16T19:42:07.745Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-16T19:31:11.932Z"
+}

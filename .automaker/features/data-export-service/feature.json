@@ -1,0 +1,15 @@
+{
+  "id": "data-export-service",
+  "category": "Core",
+  "title": "Data Export Service",
+  "description": "Service enabling users to export their data in standard formats (JSON, CSV) for portability and compliance with data protection regulations.",
+  "status": "verified",
+  "priority": 3,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-16T01:27:54.212Z",
+  "updatedAt": "2026-01-17T03:54:05.511Z",
+  "branchName": "master",
+  "descriptionHistory": [],
+  "startedAt": "2026-01-17T03:37:47.686Z"
+}
