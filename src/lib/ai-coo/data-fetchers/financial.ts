@@ -5,6 +5,23 @@
  */
 
 import { getOdooClient } from '~/data-access/odoo';
+import type { XmlRpcValue } from '~/lib/odoo/types';
+
+// ============================================================================
+// Type Guards for Odoo XML-RPC Values
+// ============================================================================
+
+function asString(value: XmlRpcValue | undefined): string {
+  if (typeof value === 'string') return value;
+  if (Array.isArray(value) && value.length > 0) return String(value[0]);
+  return String(value || '');
+}
+
+function asNumber(value: XmlRpcValue | undefined): number {
+  if (typeof value === 'number') return value;
+  if (typeof value === 'string') return parseFloat(value) || 0;
+  return 0;
+}
 
 // ============================================================================
 // Types
@@ -78,29 +95,31 @@ export async function getAccountsReceivable(): Promise<ARAgingData> {
   };
   
   for (const inv of invoices) {
-    const dueDate = new Date(inv.invoice_date_due);
+    const dueDateStr = asString(inv.invoice_date_due);
+    const dueDate = new Date(dueDateStr);
     const daysOverdue = Math.floor((now.getTime() - dueDate.getTime()) / (1000 * 60 * 60 * 24));
-    
+    const amount = asNumber(inv.amount_residual);
+
     const invoiceData = {
       id: inv.id,
-      name: inv.name,
-      partner: Array.isArray(inv.partner_id) ? inv.partner_id[1] : 'Unknown',
-      amount: inv.amount_residual,
-      dueDate: inv.invoice_date_due,
+      name: asString(inv.name),
+      partner: Array.isArray(inv.partner_id) ? String(inv.partner_id[1]) : 'Unknown',
+      amount,
+      dueDate: dueDateStr,
       daysOverdue: Math.max(0, daysOverdue),
     };
-    
+
     aging.invoices.push(invoiceData);
-    aging.total += inv.amount_residual;
-    
+    aging.total += amount;
+
     if (daysOverdue <= 30) {
-      aging.current += inv.amount_residual;
+      aging.current += amount;
     } else if (daysOverdue <= 60) {
-      aging.days30 += inv.amount_residual;
+      aging.days30 += amount;
     } else if (daysOverdue <= 90) {
-      aging.days60 += inv.amount_residual;
+      aging.days60 += amount;
     } else {
-      aging.days90plus += inv.amount_residual;
+      aging.days90plus += amount;
     }
   }
   
@@ -137,29 +156,31 @@ export async function getAccountsPayable(): Promise<APAgingData> {
   };
   
   for (const bill of bills) {
-    const dueDate = new Date(bill.invoice_date_due);
+    const dueDateStr = asString(bill.invoice_date_due);
+    const dueDate = new Date(dueDateStr);
     const daysOverdue = Math.floor((now.getTime() - dueDate.getTime()) / (1000 * 60 * 60 * 24));
-    
+    const amount = asNumber(bill.amount_residual);
+
     const billData = {
       id: bill.id,
-      name: bill.name,
-      partner: Array.isArray(bill.partner_id) ? bill.partner_id[1] : 'Unknown',
-      amount: bill.amount_residual,
-      dueDate: bill.invoice_date_due,
+      name: asString(bill.name),
+      partner: Array.isArray(bill.partner_id) ? String(bill.partner_id[1]) : 'Unknown',
+      amount,
+      dueDate: dueDateStr,
       daysOverdue: Math.max(0, daysOverdue),
     };
-    
+
     aging.bills.push(billData);
-    aging.total += bill.amount_residual;
-    
+    aging.total += amount;
+
     if (daysOverdue <= 30) {
-      aging.current += bill.amount_residual;
+      aging.current += amount;
     } else if (daysOverdue <= 60) {
-      aging.days30 += bill.amount_residual;
+      aging.days30 += amount;
     } else if (daysOverdue <= 90) {
-      aging.days60 += bill.amount_residual;
+      aging.days60 += amount;
     } else {
-      aging.days90plus += bill.amount_residual;
+      aging.days90plus += amount;
     }
   }
   
@@ -200,10 +221,10 @@ export async function getBankBalances(): Promise<BankBalanceData> {
     });
     
     if (account) {
-      const balance = account.current_balance || 0;
+      const balance = asNumber(account.current_balance);
       totalBalance += balance;
       accounts.push({
-        name: journal.name,
+        name: asString(journal.name),
         balance,
       });
     }
