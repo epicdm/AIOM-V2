@@ -717,3 +717,14 @@ export async function initializeRedisCache(
   await client.connect();
   return client;
 }
+
+/**
+ * Get the singleton Redis cache client instance
+ * Alias for getRedisCache() for backwards compatibility
+ */
+export function getRedisClient(
+  configOverrides?: Partial<RedisConfig>,
+  ttlOverrides?: Partial<TTLConfig>
+): RedisCacheClient {
+  return getRedisCache(configOverrides, ttlOverrides);
+}

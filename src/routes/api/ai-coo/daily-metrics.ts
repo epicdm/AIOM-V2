@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { database as db } from '~/db';
 import { autonomousActions, analysisResults } from '~/db/ai-coo-schema';
-import { desc, gte, eq, and, count, sql } from 'drizzle-orm';
+import { desc, gte, lte, eq, and, count, sql } from 'drizzle-orm';
 import { getClaudeSDKClient } from '~/lib/claude/sdk-client';
 
 export const Route = createFileRoute('/api/ai-coo/daily-metrics')({
@@ -165,7 +165,7 @@ async function calculateDailyMetrics(startDate: Date, endDate: Date): Promise<Da
       and(
         eq(autonomousActions.status, 'executed'),
         gte(autonomousActions.executedAt!, startDate),
-        gte(endDate, autonomousActions.executedAt!)
+        lte(autonomousActions.executedAt!, endDate)
       )
     );
 
@@ -236,7 +236,7 @@ async function generateSparklineData(): Promise<number[]> {
         and(
           eq(autonomousActions.status, 'executed'),
           gte(autonomousActions.executedAt!, startOfDay),
-          gte(endOfDay, autonomousActions.executedAt!)
+          lte(autonomousActions.executedAt!, endOfDay)
         )
       );
 
