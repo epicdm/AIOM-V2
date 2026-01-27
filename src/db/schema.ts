@@ -272,6 +272,10 @@ export const postAttachment = pgTable(
 export type PostAttachment = typeof postAttachment.$inferSelect;
 export type CreatePostAttachmentData = typeof postAttachment.$inferInsert;
 
+// Attachment type enum - Business category (not MIME type)
+export const ATTACHMENT_TYPES = ["image", "video"] as const;
+export type AttachmentType = (typeof ATTACHMENT_TYPES)[number];
+
 // Community Post table - For community forum posts
 export const communityPost = pgTable(
   "community_post",
