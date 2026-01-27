@@ -71,6 +71,18 @@ export interface WorkflowContext {
   definitionId: string;
   /** User who triggered the workflow */
   triggeredBy?: string;
+  /** Optional workflow identifier (may differ from definitionId) */
+  workflowId?: string;
+  /** Optional workflow run identifier (may differ from instanceId) */
+  workflowRunId?: string;
+  /** Optional structured trigger information */
+  trigger?: {
+    type: string;
+    payload?: Record<string, unknown>;
+    timestamp?: Date;
+  };
+  /** Optional arbitrary metadata */
+  metadata?: Record<string, unknown>;
 }
 
 /**
