@@ -8228,3 +8228,62 @@ export const demoActivityLogRelations = relations(demoActivityLog, ({ one }) => 
     references: [demoSession.id],
   }),
 }));
+
+// ============================================================================
+// Events / Calendar Table
+// ============================================================================
+
+// Event table - Calendar events and meetings
+export const event = pgTable(
+  "event",
+  {
+    id: text("id")
+      .$defaultFn(() => crypto.randomUUID())
+      .primaryKey(),
+
+    // Event details
+    title: text("title").notNull(),
+    description: text("description"),
+
+    // Timing
+    startTime: timestamp("start_time").notNull(),
+    endTime: timestamp("end_time").notNull(),
+
+    // Optional meeting link
+    eventLink: text("event_link"),
+
+    // Event type/category
+    eventType: text("event_type").notNull(), // e.g., "meeting", "call", "deadline", etc.
+
+    // Creator tracking
+    createdBy: text("created_by")
+      .notNull()
+      .references(() => user.id),
+
+    // Timestamps
+    createdAt: timestamp("created_at")
+      .$defaultFn(() => new Date())
+      .notNull(),
+    updatedAt: timestamp("updated_at")
+      .$defaultFn(() => new Date())
+      .notNull(),
+  },
+  (table) => [
+    index("idx_event_start_time").on(table.startTime),
+    index("idx_event_created_by").on(table.createdBy),
+    index("idx_event_type").on(table.eventType),
+  ]
+);
+
+// Event type exports
+export type Event = typeof event.$inferSelect;
+export type CreateEventData = typeof event.$inferInsert;
+export type UpdateEventData = Partial<Omit<CreateEventData, "id" | "createdAt">>;
+
+// Event Relations
+export const eventRelations = relations(event, ({ one }) => ({
+  creator: one(user, {
+    fields: [event.createdBy],
+    references: [user.id],
+  }),
+}));
