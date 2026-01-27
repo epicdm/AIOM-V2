@@ -1,0 +1,76 @@
+╔════════════════════════════════════════╗
+║  Odoo JSON-2 API Debug Tests          ║
+║  Testing Each Method Individually      ║
+╚════════════════════════════════════════╝
+
+========================================
+TEST 1: search_read (User's Exact Example)
+========================================
+
+✅ search_read WORKS! Found 10 companies
+First company: { id: 1632, name: '100% Green', email: false }
+
+========================================
+TEST 2: search_count
+========================================
+
+[JSON-2 Request]
+  URL: https://epic-communications-inc818.odoo.com/json/2/res.partner/search_count
+  Headers: {
+  'Content-Type': 'application/json',
+  Authorization: 'Bearer 96b9905144816c05237f7facbd34994b7a183706',
+  'X-Odoo-Database': 'epic-communications-inc818'
+}
+  Body: {
+  "domain": [
+    [
+      "is_company",
+      "=",
+      true
+    ]
+  ]
+}
+[JSON-2 Response]
+  Status: 200
+  Status Text: OK
+  Data: 312
+✅ search_count WORKS! Count: 312
+
+========================================
+TEST 3: search_read with Empty Domain
+========================================
+
+✅ Empty domain WORKS! Found 5 partners
+
+========================================
+TEST 4: read (by IDs)
+========================================
+
+Testing read with IDs: 11507, 11643
+✅ read WORKS! Got 2 records
+First record: {
+  id: 11507,
+  name: '"Charlotte Anne" <charlotte.anne.leads360pro@gmail.com>',
+  email: '"Charlotte Anne" <charlotte.anne.leads360pro@gmail.com>'
+}
+
+========================================
+TEST 5: search (returns IDs only)
+========================================
+
+✅ search WORKS! Found 10 IDs
+First few IDs: [ 1632, 872, 572, 1242, 573 ]
+
+╔════════════════════════════════════════╗
+║  TEST RESULTS SUMMARY                  ║
+╚════════════════════════════════════════╝
+
+search_read:       ✅ PASS
+search_count:      ✅ PASS
+empty domain:      ✅ PASS
+read:              ✅ PASS
+search:            ✅ PASS
+
+Total: 5/5 tests passed (100%)
+
+🎉 All tests passed! JSON-2 API client is working correctly.

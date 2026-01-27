@@ -48,6 +48,7 @@ import { Route as DashboardMdIndexRouteImport } from './routes/dashboard/md/inde
 import { Route as DashboardKycIndexRouteImport } from './routes/dashboard/kyc/index'
 import { Route as DashboardCustomerIssuesIndexRouteImport } from './routes/dashboard/customer-issues/index'
 import { Route as DashboardApprovalsIndexRouteImport } from './routes/dashboard/approvals/index'
+import { Route as DashboardAiCooIndexRouteImport } from './routes/dashboard/ai-coo/index'
 import { Route as DashboardAdminIndexRouteImport } from './routes/dashboard/admin/index'
 import { Route as ApiKycIndexRouteImport } from './routes/api/kyc/index'
 import { Route as ApiDataExportIndexRouteImport } from './routes/api/data-export/index'
@@ -86,6 +87,7 @@ import { Route as ApiOnboardingStartRouteImport } from './routes/api/onboarding/
 import { Route as ApiOnboardingSessionRouteImport } from './routes/api/onboarding/session'
 import { Route as ApiOnboardingResendOtpRouteImport } from './routes/api/onboarding/resend-otp'
 import { Route as ApiOnboardingLinkAccountRouteImport } from './routes/api/onboarding/link-account'
+import { Route as ApiMonitoringSystemHealthRouteImport } from './routes/api/monitoring/system-health'
 import { Route as ApiMonitoringStatusRouteImport } from './routes/api/monitoring/status'
 import { Route as ApiMonitoringHealthCheckRouteImport } from './routes/api/monitoring/health-check'
 import { Route as ApiMonitoringAlertsRouteImport } from './routes/api/monitoring/alerts'
@@ -110,6 +112,13 @@ import { Route as ApiAnomalyDetectionAnalyzeRouteImport } from './routes/api/ano
 import { Route as ApiAnomalyDetectionAlertsRouteImport } from './routes/api/anomaly-detection/alerts'
 import { Route as ApiAnalyticsClaudeUsageExportRouteImport } from './routes/api/analytics/claude-usage-export'
 import { Route as ApiAnalyticsClaudeUsageRouteImport } from './routes/api/analytics/claude-usage'
+import { Route as ApiAiCooTriggerRouteImport } from './routes/api/ai-coo/trigger'
+import { Route as ApiAiCooLatestAnalysisRouteImport } from './routes/api/ai-coo/latest-analysis'
+import { Route as ApiAiCooDailyMetricsRouteImport } from './routes/api/ai-coo/daily-metrics'
+import { Route as ApiAiCooApproveActionRouteImport } from './routes/api/ai-coo/approve-action'
+import { Route as ApiAiCooAlertsRouteImport } from './routes/api/ai-coo/alerts'
+import { Route as ApiAiCooActivityFeedRouteImport } from './routes/api/ai-coo/activity-feed'
+import { Route as ApiAiCooActionRecommendationsRouteImport } from './routes/api/ai-coo/action-recommendations'
 
 const UnauthenticatedRoute = UnauthenticatedRouteImport.update({
   id: '/unauthenticated',
@@ -306,6 +315,11 @@ const DashboardCustomerIssuesIndexRoute =
 const DashboardApprovalsIndexRoute = DashboardApprovalsIndexRouteImport.update({
   id: '/approvals/',
   path: '/approvals/',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAiCooIndexRoute = DashboardAiCooIndexRouteImport.update({
+  id: '/ai-coo/',
+  path: '/ai-coo/',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardAdminIndexRoute = DashboardAdminIndexRouteImport.update({
@@ -505,6 +519,12 @@ const ApiOnboardingLinkAccountRoute =
     path: '/api/onboarding/link-account',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMonitoringSystemHealthRoute =
+  ApiMonitoringSystemHealthRouteImport.update({
+    id: '/api/monitoring/system-health',
+    path: '/api/monitoring/system-health',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMonitoringStatusRoute = ApiMonitoringStatusRouteImport.update({
   id: '/api/monitoring/status',
   path: '/api/monitoring/status',
@@ -631,6 +651,42 @@ const ApiAnalyticsClaudeUsageRoute = ApiAnalyticsClaudeUsageRouteImport.update({
   path: '/api/analytics/claude-usage',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAiCooTriggerRoute = ApiAiCooTriggerRouteImport.update({
+  id: '/api/ai-coo/trigger',
+  path: '/api/ai-coo/trigger',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiCooLatestAnalysisRoute = ApiAiCooLatestAnalysisRouteImport.update({
+  id: '/api/ai-coo/latest-analysis',
+  path: '/api/ai-coo/latest-analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiCooDailyMetricsRoute = ApiAiCooDailyMetricsRouteImport.update({
+  id: '/api/ai-coo/daily-metrics',
+  path: '/api/ai-coo/daily-metrics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiCooApproveActionRoute = ApiAiCooApproveActionRouteImport.update({
+  id: '/api/ai-coo/approve-action',
+  path: '/api/ai-coo/approve-action',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiCooAlertsRoute = ApiAiCooAlertsRouteImport.update({
+  id: '/api/ai-coo/alerts',
+  path: '/api/ai-coo/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiCooActivityFeedRoute = ApiAiCooActivityFeedRouteImport.update({
+  id: '/api/ai-coo/activity-feed',
+  path: '/api/ai-coo/activity-feed',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAiCooActionRecommendationsRoute =
+  ApiAiCooActionRecommendationsRouteImport.update({
+    id: '/api/ai-coo/action-recommendations',
+    path: '/api/ai-coo/action-recommendations',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -653,6 +709,13 @@ export interface FileRoutesByFullPath {
   '/dashboard/': typeof DashboardIndexRoute
   '/demo': typeof DemoIndexRoute
   '/mobile': typeof MobileIndexRoute
+  '/api/ai-coo/action-recommendations': typeof ApiAiCooActionRecommendationsRoute
+  '/api/ai-coo/activity-feed': typeof ApiAiCooActivityFeedRoute
+  '/api/ai-coo/alerts': typeof ApiAiCooAlertsRoute
+  '/api/ai-coo/approve-action': typeof ApiAiCooApproveActionRoute
+  '/api/ai-coo/daily-metrics': typeof ApiAiCooDailyMetricsRoute
+  '/api/ai-coo/latest-analysis': typeof ApiAiCooLatestAnalysisRoute
+  '/api/ai-coo/trigger': typeof ApiAiCooTriggerRoute
   '/api/analytics/claude-usage': typeof ApiAnalyticsClaudeUsageRoute
   '/api/analytics/claude-usage-export': typeof ApiAnalyticsClaudeUsageExportRoute
   '/api/anomaly-detection/alerts': typeof ApiAnomalyDetectionAlertsRoute
@@ -677,6 +740,7 @@ export interface FileRoutesByFullPath {
   '/api/monitoring/alerts': typeof ApiMonitoringAlertsRoute
   '/api/monitoring/health-check': typeof ApiMonitoringHealthCheckRoute
   '/api/monitoring/status': typeof ApiMonitoringStatusRoute
+  '/api/monitoring/system-health': typeof ApiMonitoringSystemHealthRoute
   '/api/onboarding/link-account': typeof ApiOnboardingLinkAccountRoute
   '/api/onboarding/resend-otp': typeof ApiOnboardingResendOtpRoute
   '/api/onboarding/session': typeof ApiOnboardingSessionRoute
@@ -715,6 +779,7 @@ export interface FileRoutesByFullPath {
   '/api/data-export': typeof ApiDataExportIndexRoute
   '/api/kyc': typeof ApiKycIndexRoute
   '/dashboard/admin': typeof DashboardAdminIndexRoute
+  '/dashboard/ai-coo': typeof DashboardAiCooIndexRoute
   '/dashboard/approvals': typeof DashboardApprovalsIndexRoute
   '/dashboard/customer-issues': typeof DashboardCustomerIssuesIndexRoute
   '/dashboard/kyc': typeof DashboardKycIndexRoute
@@ -755,6 +820,13 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardIndexRoute
   '/demo': typeof DemoIndexRoute
   '/mobile': typeof MobileIndexRoute
+  '/api/ai-coo/action-recommendations': typeof ApiAiCooActionRecommendationsRoute
+  '/api/ai-coo/activity-feed': typeof ApiAiCooActivityFeedRoute
+  '/api/ai-coo/alerts': typeof ApiAiCooAlertsRoute
+  '/api/ai-coo/approve-action': typeof ApiAiCooApproveActionRoute
+  '/api/ai-coo/daily-metrics': typeof ApiAiCooDailyMetricsRoute
+  '/api/ai-coo/latest-analysis': typeof ApiAiCooLatestAnalysisRoute
+  '/api/ai-coo/trigger': typeof ApiAiCooTriggerRoute
   '/api/analytics/claude-usage': typeof ApiAnalyticsClaudeUsageRoute
   '/api/analytics/claude-usage-export': typeof ApiAnalyticsClaudeUsageExportRoute
   '/api/anomaly-detection/alerts': typeof ApiAnomalyDetectionAlertsRoute
@@ -779,6 +851,7 @@ export interface FileRoutesByTo {
   '/api/monitoring/alerts': typeof ApiMonitoringAlertsRoute
   '/api/monitoring/health-check': typeof ApiMonitoringHealthCheckRoute
   '/api/monitoring/status': typeof ApiMonitoringStatusRoute
+  '/api/monitoring/system-health': typeof ApiMonitoringSystemHealthRoute
   '/api/onboarding/link-account': typeof ApiOnboardingLinkAccountRoute
   '/api/onboarding/resend-otp': typeof ApiOnboardingResendOtpRoute
   '/api/onboarding/session': typeof ApiOnboardingSessionRoute
@@ -817,6 +890,7 @@ export interface FileRoutesByTo {
   '/api/data-export': typeof ApiDataExportIndexRoute
   '/api/kyc': typeof ApiKycIndexRoute
   '/dashboard/admin': typeof DashboardAdminIndexRoute
+  '/dashboard/ai-coo': typeof DashboardAiCooIndexRoute
   '/dashboard/approvals': typeof DashboardApprovalsIndexRoute
   '/dashboard/customer-issues': typeof DashboardCustomerIssuesIndexRoute
   '/dashboard/kyc': typeof DashboardKycIndexRoute
@@ -859,6 +933,13 @@ export interface FileRoutesById {
   '/dashboard/': typeof DashboardIndexRoute
   '/demo/': typeof DemoIndexRoute
   '/mobile/': typeof MobileIndexRoute
+  '/api/ai-coo/action-recommendations': typeof ApiAiCooActionRecommendationsRoute
+  '/api/ai-coo/activity-feed': typeof ApiAiCooActivityFeedRoute
+  '/api/ai-coo/alerts': typeof ApiAiCooAlertsRoute
+  '/api/ai-coo/approve-action': typeof ApiAiCooApproveActionRoute
+  '/api/ai-coo/daily-metrics': typeof ApiAiCooDailyMetricsRoute
+  '/api/ai-coo/latest-analysis': typeof ApiAiCooLatestAnalysisRoute
+  '/api/ai-coo/trigger': typeof ApiAiCooTriggerRoute
   '/api/analytics/claude-usage': typeof ApiAnalyticsClaudeUsageRoute
   '/api/analytics/claude-usage-export': typeof ApiAnalyticsClaudeUsageExportRoute
   '/api/anomaly-detection/alerts': typeof ApiAnomalyDetectionAlertsRoute
@@ -883,6 +964,7 @@ export interface FileRoutesById {
   '/api/monitoring/alerts': typeof ApiMonitoringAlertsRoute
   '/api/monitoring/health-check': typeof ApiMonitoringHealthCheckRoute
   '/api/monitoring/status': typeof ApiMonitoringStatusRoute
+  '/api/monitoring/system-health': typeof ApiMonitoringSystemHealthRoute
   '/api/onboarding/link-account': typeof ApiOnboardingLinkAccountRoute
   '/api/onboarding/resend-otp': typeof ApiOnboardingResendOtpRoute
   '/api/onboarding/session': typeof ApiOnboardingSessionRoute
@@ -921,6 +1003,7 @@ export interface FileRoutesById {
   '/api/data-export/': typeof ApiDataExportIndexRoute
   '/api/kyc/': typeof ApiKycIndexRoute
   '/dashboard/admin/': typeof DashboardAdminIndexRoute
+  '/dashboard/ai-coo/': typeof DashboardAiCooIndexRoute
   '/dashboard/approvals/': typeof DashboardApprovalsIndexRoute
   '/dashboard/customer-issues/': typeof DashboardCustomerIssuesIndexRoute
   '/dashboard/kyc/': typeof DashboardKycIndexRoute
@@ -964,6 +1047,13 @@ export interface FileRouteTypes {
     | '/dashboard/'
     | '/demo'
     | '/mobile'
+    | '/api/ai-coo/action-recommendations'
+    | '/api/ai-coo/activity-feed'
+    | '/api/ai-coo/alerts'
+    | '/api/ai-coo/approve-action'
+    | '/api/ai-coo/daily-metrics'
+    | '/api/ai-coo/latest-analysis'
+    | '/api/ai-coo/trigger'
     | '/api/analytics/claude-usage'
     | '/api/analytics/claude-usage-export'
     | '/api/anomaly-detection/alerts'
@@ -988,6 +1078,7 @@ export interface FileRouteTypes {
     | '/api/monitoring/alerts'
     | '/api/monitoring/health-check'
     | '/api/monitoring/status'
+    | '/api/monitoring/system-health'
     | '/api/onboarding/link-account'
     | '/api/onboarding/resend-otp'
     | '/api/onboarding/session'
@@ -1026,6 +1117,7 @@ export interface FileRouteTypes {
     | '/api/data-export'
     | '/api/kyc'
     | '/dashboard/admin'
+    | '/dashboard/ai-coo'
     | '/dashboard/approvals'
     | '/dashboard/customer-issues'
     | '/dashboard/kyc'
@@ -1066,6 +1158,13 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/demo'
     | '/mobile'
+    | '/api/ai-coo/action-recommendations'
+    | '/api/ai-coo/activity-feed'
+    | '/api/ai-coo/alerts'
+    | '/api/ai-coo/approve-action'
+    | '/api/ai-coo/daily-metrics'
+    | '/api/ai-coo/latest-analysis'
+    | '/api/ai-coo/trigger'
     | '/api/analytics/claude-usage'
     | '/api/analytics/claude-usage-export'
     | '/api/anomaly-detection/alerts'
@@ -1090,6 +1189,7 @@ export interface FileRouteTypes {
     | '/api/monitoring/alerts'
     | '/api/monitoring/health-check'
     | '/api/monitoring/status'
+    | '/api/monitoring/system-health'
     | '/api/onboarding/link-account'
     | '/api/onboarding/resend-otp'
     | '/api/onboarding/session'
@@ -1128,6 +1228,7 @@ export interface FileRouteTypes {
     | '/api/data-export'
     | '/api/kyc'
     | '/dashboard/admin'
+    | '/dashboard/ai-coo'
     | '/dashboard/approvals'
     | '/dashboard/customer-issues'
     | '/dashboard/kyc'
@@ -1169,6 +1270,13 @@ export interface FileRouteTypes {
     | '/dashboard/'
     | '/demo/'
     | '/mobile/'
+    | '/api/ai-coo/action-recommendations'
+    | '/api/ai-coo/activity-feed'
+    | '/api/ai-coo/alerts'
+    | '/api/ai-coo/approve-action'
+    | '/api/ai-coo/daily-metrics'
+    | '/api/ai-coo/latest-analysis'
+    | '/api/ai-coo/trigger'
     | '/api/analytics/claude-usage'
     | '/api/analytics/claude-usage-export'
     | '/api/anomaly-detection/alerts'
@@ -1193,6 +1301,7 @@ export interface FileRouteTypes {
     | '/api/monitoring/alerts'
     | '/api/monitoring/health-check'
     | '/api/monitoring/status'
+    | '/api/monitoring/system-health'
     | '/api/onboarding/link-account'
     | '/api/onboarding/resend-otp'
     | '/api/onboarding/session'
@@ -1231,6 +1340,7 @@ export interface FileRouteTypes {
     | '/api/data-export/'
     | '/api/kyc/'
     | '/dashboard/admin/'
+    | '/dashboard/ai-coo/'
     | '/dashboard/approvals/'
     | '/dashboard/customer-issues/'
     | '/dashboard/kyc/'
@@ -1266,6 +1376,13 @@ export interface RootRouteChildren {
   DemoVoiceInputRoute: typeof DemoVoiceInputRoute
   DemoIndexRoute: typeof DemoIndexRoute
   MobileIndexRoute: typeof MobileIndexRoute
+  ApiAiCooActionRecommendationsRoute: typeof ApiAiCooActionRecommendationsRoute
+  ApiAiCooActivityFeedRoute: typeof ApiAiCooActivityFeedRoute
+  ApiAiCooAlertsRoute: typeof ApiAiCooAlertsRoute
+  ApiAiCooApproveActionRoute: typeof ApiAiCooApproveActionRoute
+  ApiAiCooDailyMetricsRoute: typeof ApiAiCooDailyMetricsRoute
+  ApiAiCooLatestAnalysisRoute: typeof ApiAiCooLatestAnalysisRoute
+  ApiAiCooTriggerRoute: typeof ApiAiCooTriggerRoute
   ApiAnalyticsClaudeUsageRoute: typeof ApiAnalyticsClaudeUsageRoute
   ApiAnalyticsClaudeUsageExportRoute: typeof ApiAnalyticsClaudeUsageExportRoute
   ApiAnomalyDetectionAlertsRoute: typeof ApiAnomalyDetectionAlertsRoute
@@ -1290,6 +1407,7 @@ export interface RootRouteChildren {
   ApiMonitoringAlertsRoute: typeof ApiMonitoringAlertsRoute
   ApiMonitoringHealthCheckRoute: typeof ApiMonitoringHealthCheckRoute
   ApiMonitoringStatusRoute: typeof ApiMonitoringStatusRoute
+  ApiMonitoringSystemHealthRoute: typeof ApiMonitoringSystemHealthRoute
   ApiOnboardingLinkAccountRoute: typeof ApiOnboardingLinkAccountRoute
   ApiOnboardingResendOtpRoute: typeof ApiOnboardingResendOtpRoute
   ApiOnboardingSessionRoute: typeof ApiOnboardingSessionRoute
@@ -1611,6 +1729,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardApprovalsIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/dashboard/ai-coo/': {
+      id: '/dashboard/ai-coo/'
+      path: '/ai-coo'
+      fullPath: '/dashboard/ai-coo'
+      preLoaderRoute: typeof DashboardAiCooIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/dashboard/admin/': {
       id: '/dashboard/admin/'
       path: '/admin'
@@ -1877,6 +2002,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOnboardingLinkAccountRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/monitoring/system-health': {
+      id: '/api/monitoring/system-health'
+      path: '/api/monitoring/system-health'
+      fullPath: '/api/monitoring/system-health'
+      preLoaderRoute: typeof ApiMonitoringSystemHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/monitoring/status': {
       id: '/api/monitoring/status'
       path: '/api/monitoring/status'
@@ -2045,6 +2177,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAnalyticsClaudeUsageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/ai-coo/trigger': {
+      id: '/api/ai-coo/trigger'
+      path: '/api/ai-coo/trigger'
+      fullPath: '/api/ai-coo/trigger'
+      preLoaderRoute: typeof ApiAiCooTriggerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai-coo/latest-analysis': {
+      id: '/api/ai-coo/latest-analysis'
+      path: '/api/ai-coo/latest-analysis'
+      fullPath: '/api/ai-coo/latest-analysis'
+      preLoaderRoute: typeof ApiAiCooLatestAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai-coo/daily-metrics': {
+      id: '/api/ai-coo/daily-metrics'
+      path: '/api/ai-coo/daily-metrics'
+      fullPath: '/api/ai-coo/daily-metrics'
+      preLoaderRoute: typeof ApiAiCooDailyMetricsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai-coo/approve-action': {
+      id: '/api/ai-coo/approve-action'
+      path: '/api/ai-coo/approve-action'
+      fullPath: '/api/ai-coo/approve-action'
+      preLoaderRoute: typeof ApiAiCooApproveActionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai-coo/alerts': {
+      id: '/api/ai-coo/alerts'
+      path: '/api/ai-coo/alerts'
+      fullPath: '/api/ai-coo/alerts'
+      preLoaderRoute: typeof ApiAiCooAlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai-coo/activity-feed': {
+      id: '/api/ai-coo/activity-feed'
+      path: '/api/ai-coo/activity-feed'
+      fullPath: '/api/ai-coo/activity-feed'
+      preLoaderRoute: typeof ApiAiCooActivityFeedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/ai-coo/action-recommendations': {
+      id: '/api/ai-coo/action-recommendations'
+      path: '/api/ai-coo/action-recommendations'
+      fullPath: '/api/ai-coo/action-recommendations'
+      preLoaderRoute: typeof ApiAiCooActionRecommendationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -2060,6 +2241,7 @@ interface DashboardRouteChildren {
   DashboardVouchersCreateRoute: typeof DashboardVouchersCreateRoute
   DashboardWalletTransactionsRoute: typeof DashboardWalletTransactionsRoute
   DashboardAdminIndexRoute: typeof DashboardAdminIndexRoute
+  DashboardAiCooIndexRoute: typeof DashboardAiCooIndexRoute
   DashboardApprovalsIndexRoute: typeof DashboardApprovalsIndexRoute
   DashboardCustomerIssuesIndexRoute: typeof DashboardCustomerIssuesIndexRoute
   DashboardKycIndexRoute: typeof DashboardKycIndexRoute
@@ -2083,6 +2265,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardVouchersCreateRoute: DashboardVouchersCreateRoute,
   DashboardWalletTransactionsRoute: DashboardWalletTransactionsRoute,
   DashboardAdminIndexRoute: DashboardAdminIndexRoute,
+  DashboardAiCooIndexRoute: DashboardAiCooIndexRoute,
   DashboardApprovalsIndexRoute: DashboardApprovalsIndexRoute,
   DashboardCustomerIssuesIndexRoute: DashboardCustomerIssuesIndexRoute,
   DashboardKycIndexRoute: DashboardKycIndexRoute,
@@ -2112,6 +2295,13 @@ const rootRouteChildren: RootRouteChildren = {
   DemoVoiceInputRoute: DemoVoiceInputRoute,
   DemoIndexRoute: DemoIndexRoute,
   MobileIndexRoute: MobileIndexRoute,
+  ApiAiCooActionRecommendationsRoute: ApiAiCooActionRecommendationsRoute,
+  ApiAiCooActivityFeedRoute: ApiAiCooActivityFeedRoute,
+  ApiAiCooAlertsRoute: ApiAiCooAlertsRoute,
+  ApiAiCooApproveActionRoute: ApiAiCooApproveActionRoute,
+  ApiAiCooDailyMetricsRoute: ApiAiCooDailyMetricsRoute,
+  ApiAiCooLatestAnalysisRoute: ApiAiCooLatestAnalysisRoute,
+  ApiAiCooTriggerRoute: ApiAiCooTriggerRoute,
   ApiAnalyticsClaudeUsageRoute: ApiAnalyticsClaudeUsageRoute,
   ApiAnalyticsClaudeUsageExportRoute: ApiAnalyticsClaudeUsageExportRoute,
   ApiAnomalyDetectionAlertsRoute: ApiAnomalyDetectionAlertsRoute,
@@ -2136,6 +2326,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMonitoringAlertsRoute: ApiMonitoringAlertsRoute,
   ApiMonitoringHealthCheckRoute: ApiMonitoringHealthCheckRoute,
   ApiMonitoringStatusRoute: ApiMonitoringStatusRoute,
+  ApiMonitoringSystemHealthRoute: ApiMonitoringSystemHealthRoute,
   ApiOnboardingLinkAccountRoute: ApiOnboardingLinkAccountRoute,
   ApiOnboardingResendOtpRoute: ApiOnboardingResendOtpRoute,
   ApiOnboardingSessionRoute: ApiOnboardingSessionRoute,

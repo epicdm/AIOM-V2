@@ -1,0 +1,1040 @@
+
+Running 2 tests using 2 workers
+
+[1A[2K[1/2] [chromium] › tests\crawl-and-test-buttons.spec.ts:244:3 › AI COO Dashboard - Button Interaction Crawl › Debug: List all clickable elements
+[1A[2K[2/2] [chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons
+
+=== Starting Dashboard Crawl ===
+
+
+[1A[2K✓ Page loaded successfully
+
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:244:3 › AI COO Dashboard - Button Interaction Crawl › Debug: List all clickable elements
+
+=== All Clickable Elements ===
+
+
+[1A[2KTotal buttons found: 93
+
+
+[1A[2KButton 1:
+
+[1A[2K  Text: "Select Language"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-primary/50 active:scale-[0.98] border shadow-sm backdrop-blur-sm bg-white border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white h-10 w-10
+
+[1A[2K
+
+[1A[2KButton 2:
+
+[1A[2K  Text: "Toggle theme"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-primary/50 active:scale-[0.98] border shadow-sm backdrop-blur-sm bg-white border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white h-10 w-10
+
+[1A[2K
+
+[1A[2KButton 3:
+
+[1A[2K  Text: ""
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-primary/50 active:scale-[0.98] hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white h-6 w-6 text-muted-foreground hover:text-foreground
+
+[1A[2K
+
+[1A[2KButton 4:
+
+[1A[2K  Text: "Active"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1.5 hover:bg-emerald-200 transition-colors cursor-pointer
+
+[1A[2K
+
+[1A[2KButton 5:
+
+[1A[2K  Text: "Activity Log"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 6:
+
+[1A[2K  Text: "Pause"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 7:
+
+[1A[2K  Text: "3"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: relative flex h-8 w-8 items-center justify-center rounded-lg hover:bg-gray-100
+
+[1A[2K
+
+[1A[2KButton 8:
+
+[1A[2K  Text: ""
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: flex h-8 w-8 items-center justify-center rounded-lg hover:bg-gray-100
+
+[1A[2K
+
+[1A[2KButton 9:
+
+[1A[2K  Text: "Review All (2)"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700
+
+[1A[2K
+
+[1A[2KButton 10:
+
+[1A[2K  Text: "Approve & Execute"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700
+
+[1A[2K
+
+[1A[2KButton 11:
+
+[1A[2K  Text: "Review Each"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 12:
+
+[1A[2K  Text: "Ask AI"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 13:
+
+[1A[2K  Text: "Dismiss"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 14:
+
+[1A[2K  Text: "Show Details"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: mt-3 inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700
+
+[1A[2K
+
+[1A[2KButton 15:
+
+[1A[2K  Text: "Approve & Execute"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700
+
+[1A[2K
+
+[1A[2KButton 16:
+
+[1A[2K  Text: "Review Each"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 17:
+
+[1A[2K  Text: "Ask AI"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 18:
+
+[1A[2K  Text: "Dismiss"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50
+
+[1A[2K
+
+[1A[2KButton 19:
+
+[1A[2K  Text: "Show Details"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: mt-3 inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700
+
+[1A[2K
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons
+TEST 1: Clicking Active Status Pill...
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:244:3 › AI COO Dashboard - Button Interaction Crawl › Debug: List all clickable elements
+Button 20:
+
+[1A[2K  Text: "Show all deals >$50K"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-md bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200
+
+[1A[2K
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons
+  Found 1 button(s) with "Active" text
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:244:3 › AI COO Dashboard - Button Interaction Crawl › Debug: List all clickable elements
+Button 21:
+
+[1A[2K  Text: "Overdue invoices"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-md bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200
+
+[1A[2K
+
+[1A[2KButton 22:
+
+[1A[2K  Text: "Team productivity"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: rounded-md bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200
+
+[1A[2K
+
+[1A[2KButton 23:
+
+[1A[2K  Text: "Increase Automation"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: flex-1 rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700
+
+[1A[2K
+
+[1A[2KButton 24:
+
+[1A[2K  Text: "Enable More Automation"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: flex-1 rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700
+
+[1A[2K
+
+[1A[2KButton 25:
+
+[1A[2K  Text: ""
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go2224423957
+
+[1A[2K
+
+[1A[2KButton 26:
+
+[1A[2K  Text: "TANSTACKTanStack Router v1"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go283257069
+
+[1A[2K
+
+[1A[2KButton 27:
+
+[1A[2K  Text: "Router15 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 28:
+
+[1A[2K  Text: "state10 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 29:
+
+[1A[2K  Text: "location8 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 30:
+
+[1A[2K  Text: "matches3 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 31:
+
+[1A[2K  Text: "routesById58 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 32:
+
+[1A[2K  Text: "routesByPath56 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 33:
+
+[1A[2K  Text: "options11 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 34:
+
+[1A[2K  Text: "context1 item"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 35:
+
+[1A[2K  Text: "routeTree14 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 36:
+
+[1A[2K  Text: "serializationAdapters1 item"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 37:
+
+[1A[2K  Text: "ssr1 item"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 38:
+
+[1A[2K  Text: "processedTree5 items"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 39:
+
+[1A[2K  Text: "ssr1 item"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1058205856
+
+[1A[2K
+
+[1A[2KButton 40:
+
+[1A[2K  Text: "Routes"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go3643664686 go2107851696 go1232428028
+
+[1A[2K
+
+[1A[2KButton 41:
+
+[1A[2K  Text: "Matches"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go3643664686 go862916629 go1232428028
+
+[1A[2K
+
+[1A[2KButton 42:
+
+[1A[2K  Text: "History"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go3643664686 go862916629
+
+[1A[2K
+
+[1A[2KButton 43:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 44:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 45:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 46:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 47:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 48:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 49:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 50:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 51:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 52:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 53:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 54:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 55:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 56:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 57:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 58:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 59:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 60:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 61:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 62:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 63:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 64:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 65:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 66:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 67:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 68:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 69:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 70:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 71:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 72:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 73:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 74:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 75:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 76:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 77:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 78:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 79:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 80:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 81:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 82:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 83:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 84:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 85:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 86:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 87:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 88:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 89:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons
+  ✓ SUCCESS: Drawer opened!
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:244:3 › AI COO Dashboard - Button Interaction Crawl › Debug: List all clickable elements
+Button 90:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 91:
+
+[1A[2K  Text: "➔"
+
+[1A[2K  Visible: false
+
+[1A[2K  Classes: go1702243790
+
+[1A[2K
+
+[1A[2KButton 92:
+
+[1A[2K  Text: "-TanStack Router"
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: go1767807125 go2968029118 go2279492678
+
+[1A[2K
+
+[1A[2KButton 93:
+
+[1A[2K  Text: ""
+
+[1A[2K  Visible: true
+
+[1A[2K  Classes: tsqd-open-btn
+
+[1A[2K
+
+[1A[2K
+Total links found: 25
+
+[1A[2K[chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons
+
+TEST 2: Clicking Emergency Stop button...
+
+[1A[2K  Found 1 Emergency Stop button(s)
+
+[1A[2K  ✓ SUCCESS: Emergency modal opened!
+
+[1A[2K  ✓ Modal closed
+
+[1A[2K
+TEST 3: Looking for Review All button...
+
+[1A[2K  Found 1 "Review All" button(s)
+
+[1A[2K  ✗ ERROR: Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button').filter({ hasText: 'Review All' }).first()[22m
+[2m    - locator resolved to <button class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">Review All (2)</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    40 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div data-state="open" aria-hidden="true" data-aria-hidden="true" class="fixed inset-0 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"></div> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+
+[1A[2K
+TEST 4: Testing collapsible decision cards...
+
+[1A[2K  ✗ ERROR: Error: locator.count: Target page, context or browser has been closed
+
+[1A[2K
+TEST 5: Testing action buttons on decision cards...
+
+[1A[2K  ✗ ERROR: Error: locator.count: Target page, context or browser has been closed
+
+[1A[2K  1) [chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.screenshot: Target page, context or browser has been closed
+
+      182 |
+      183 |     // Final screenshot
+    > 184 |     await page.screenshot({ path: 'test-results/crawl-06-final.png', fullPage: true });
+          |                ^
+      185 |
+      186 |     console.log('\n=== Crawl Complete ===\n');
+      187 |
+        at C:\repos\AIOM-V2\tests\crawl-and-test-buttons.spec.ts:184:16
+
+    Error Context: test-results\crawl-and-test-buttons-AI--07850-est-all-interactive-buttons-chromium\error-context.md
+
+
+[1A[2K  1 failed
+    [chromium] › tests\crawl-and-test-buttons.spec.ts:3:3 › AI COO Dashboard - Button Interaction Crawl › Crawl and test all interactive buttons 
+  1 passed (32.1s)

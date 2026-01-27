@@ -37,8 +37,8 @@ export function LiveActivityColumn() {
   const recent: ActivityItem[] = data?.recent || [];
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-4">
-      <h2 className="mb-6 text-lg font-medium text-gray-900">Live Activity</h2>
+    <div className="rounded-[10px] border border-gray-200 bg-white p-4">
+      <h2 className="mb-6 text-[18px] font-medium leading-[28px] text-[#0A0A0A]">Live Activity</h2>
 
       {isLoading ? (
         <div className="py-12 text-center">
@@ -49,7 +49,7 @@ export function LiveActivityColumn() {
         <>
           {/* Happening Now */}
           <div className="mb-6">
-            <p className="mb-3 text-xs font-medium text-gray-500">HAPPENING NOW</p>
+            <p className="mb-3 text-[12px] font-medium uppercase leading-4 tracking-wide text-gray-500">HAPPENING NOW</p>
             {happeningNow.length > 0 ? (
               <div className="space-y-3">
                 {happeningNow.map((item: ActivityItem) => (
@@ -63,7 +63,7 @@ export function LiveActivityColumn() {
 
           {/* Next 2 Hours */}
           <div className="mb-6">
-            <p className="mb-3 text-xs font-medium text-gray-500">NEXT 2 HOURS</p>
+            <p className="mb-3 text-[12px] font-medium uppercase leading-4 tracking-wide text-gray-500">NEXT 2 HOURS</p>
             {upcoming.length > 0 ? (
               <div className="space-y-1">
                 {upcoming.map((item: ActivityItem) => (
@@ -77,7 +77,7 @@ export function LiveActivityColumn() {
 
           {/* Recent Activity */}
           <div>
-            <p className="mb-3 text-xs font-medium text-gray-500">RECENT ACTIVITY</p>
+            <p className="mb-3 text-[12px] font-medium uppercase leading-4 tracking-wide text-gray-500">RECENT ACTIVITY</p>
             {recent.length > 0 ? (
               <div className="space-y-2">
                 {recent.map((item: ActivityItem) => (
@@ -104,8 +104,8 @@ function ActivityRow({ icon, iconColor, title, subtitle, status }: ActivityItem)
       </div>
 
       <div className="flex-1">
-        <p className="text-sm text-gray-900">{title}</p>
-        <p className="text-xs text-gray-500">{subtitle}</p>
+        <p className="text-[14px] leading-5 text-[#0A0A0A]">{title}</p>
+        <p className="text-[12px] leading-4 text-[#717182]">{subtitle}</p>
       </div>
 
       {status === 'running' && (
@@ -134,15 +134,15 @@ function UpcomingActivityRow({ icon, iconColor, title, subtitle, time }: Activit
 
   return (
     <div className="flex gap-4 rounded-lg p-2 hover:bg-gray-50">
-      <p className="w-12 text-xs text-gray-500">{time}</p>
+      <p className="w-12 text-[12px] leading-4 text-[#717182]">{time}</p>
 
       <div className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full ${iconColor}`}>
         <Icon className="h-3.5 w-3.5" />
       </div>
 
       <div className="flex-1">
-        <p className="text-sm text-gray-900">{title}</p>
-        <p className="text-xs text-gray-500">{subtitle}</p>
+        <p className="text-[14px] leading-5 text-[#0A0A0A]">{title}</p>
+        <p className="text-[12px] leading-4 text-[#717182]">{subtitle}</p>
       </div>
     </div>
   );

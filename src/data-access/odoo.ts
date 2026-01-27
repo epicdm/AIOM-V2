@@ -28,17 +28,33 @@ import {
 let odooClient: OdooClient | null = null;
 
 /**
- * Gets or creates the Odoo client instance
+ * Gets Odoo config from environment variables
  */
-export async function getOdooClient(config?: OdooConfig): Promise<OdooClient> {
-  if (!odooClient && config) {
-    odooClient = await createOdooClient(config);
+function getOdooConfigFromEnv(): OdooConfig {
+  const url = process.env.ODOO_URL;
+  const database = process.env.ODOO_DATABASE;
+  const username = process.env.ODOO_USERNAME;
+  const password = process.env.ODOO_PASSWORD;
+
+  if (!url || !database || !username || !password) {
+    throw new Error(
+      'Odoo configuration missing. Set ODOO_URL, ODOO_DATABASE, ODOO_USERNAME, and ODOO_PASSWORD in environment variables.'
+    );
   }
 
+  return { url, database, username, password };
+}
+
+/**
+ * Gets or creates the Odoo client instance
+ * Auto-initializes from environment variables if not already initialized
+ */
+export async function getOdooClient(config?: OdooConfig): Promise<OdooClient> {
   if (!odooClient) {
-    throw new Error(
-      'Odoo client not initialized. Call initOdooClient() first or provide config.'
-    );
+    // Auto-initialize from env if no config provided
+    const odooConfig = config || getOdooConfigFromEnv();
+    odooClient = await createOdooClient(odooConfig);
+    console.log(`[Odoo] Connected to ${odooConfig.url} (${odooConfig.database})`);
   }
 
   return odooClient;

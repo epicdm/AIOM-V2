@@ -1,0 +1,182 @@
+[dotenv@17.2.3] injecting env (23) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║      Odoo JSON-2 API Comprehensive Test                  ║
+║      Testing All Departments (Odoo 19)                   ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+🔗 Odoo Instance: https://epic-communications-inc818.odoo.com
+📦 Database: epic-communications-inc818
+🔑 Using API Key authentication (JSON-2)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔌 STEP 1: Testing Connection & Authentication
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Testing version endpoint...
+[JSON-2 Request]
+  URL: https://epic-communications-inc818.odoo.com/json/2/version
+  Headers: {
+  'Content-Type': 'application/json',
+  Authorization: 'Bearer 96b9905144816c05237f7facbd34994b7a183706',
+  'X-Odoo-Database': 'epic-communications-inc818'
+}
+  Body: {}
+[JSON-2 Response]
+  Status: 404
+  Status Text: NOT FOUND
+  Error Body: {"name": "werkzeug.exceptions.NotFound", "message": "Did you mean POST /json/2/<model>/<method>?", "arguments": ["Did you mean POST /json/2/<model>/<method>?", 404], "context": {}, "debug": "Traceback (most recent call last):\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 2275, in _serve_db\n    return service_model.retrying(serve_func, env=self.env)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 184, in retrying\n    result = func()\n             ^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 2330, in _serve_ir_http\n    response = self.dispatcher.dispatch(rule.endpoint, args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 2610, in dispatch\n    result = self.request.registry['ir.http']._dispatch(endpoint)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/addons/base/models/ir_http.py\", line 355, in _dispatch\n    result = endpoint(**request.params)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 788, in route_wrapper\n    result = endpoint(self, *args, **params_ok)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/json2.py\", line 47, in web_json_2_404\n    raise request.not_found(e)\nwerkzeug.exceptions.NotFound: 404 Not Found: Did you mean POST /json/2/<model>/<method>?\n"}
+   ⚠️  Version endpoint failed, trying simple search...
+   Error: Odoo API error (404): {"name": "werkzeug.exceptions.NotFound", "message": "Did you mean POST /json/2/<model>/<method>?", "arguments": ["Did you mean POST /json/2/<model>/<method>?", 404], "context": {}, "debug": "Traceback (most recent call last):\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 2275, in _serve_db\n    return service_model.retrying(serve_func, env=self.env)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 184, in retrying\n    result = func()\n             ^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 2330, in _serve_ir_http\n    response = self.dispatcher.dispatch(rule.endpoint, args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 2610, in dispatch\n    result = self.request.registry['ir.http']._dispatch(endpoint)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/addons/base/models/ir_http.py\", line 355, in _dispatch\n    result = endpoint(**request.params)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 788, in route_wrapper\n    result = endpoint(self, *args, **params_ok)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/json2.py\", line 47, in web_json_2_404\n    raise request.not_found(e)\nwerkzeug.exceptions.NotFound: 404 Not Found: Did you mean POST /json/2/<model>/<method>?\n"}
+Testing searchCount endpoint...
+[JSON-2 Request]
+  URL: https://epic-communications-inc818.odoo.com/json/2/res.partner/search_count
+  Headers: {
+  'Content-Type': 'application/json',
+  Authorization: 'Bearer 96b9905144816c05237f7facbd34994b7a183706',
+  'X-Odoo-Database': 'epic-communications-inc818'
+}
+  Body: {
+  "domain": []
+}
+[JSON-2 Response]
+  Status: 200
+  Status Text: OK
+  Data: 7815
+✅ Connection successful! (found 7815 partners)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💰 STEP 2: Testing Finance Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 Test 2.1: Fetching Invoices...
+   ✅ Found 10 invoices
+   Sample Invoice:
+     - Number: INV/2025/00086
+     - Customer: Clifftop Cleaning & Maintenance Services, Cyril Dewhurst
+     - Amount: $597.7
+     - Payment State: partial
+     - State: posted
+
+💳 Test 2.2: Fetching Unpaid Invoices...
+   ✅ Found 10 unpaid invoices
+   Total Unpaid: $3750.57
+
+💵 Test 2.3: Fetching Payments...
+   ✅ Found 10 payments
+   Sample Payment:
+     - Reference: PBNK1/2026/00001
+     - Amount: $700
+     - Type: inbound
+     - State: in_process
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📈 STEP 3: Testing Sales Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Test 3.1: Fetching Sales Opportunities...
+   ✅ Found 10 opportunities
+   Sample Opportunity:
+     - Name: Odoo - Raffoul & Co (1985) LTD's opportunity
+     - Expected Revenue: $0
+     - Stage: Proposition
+     - Probability: 99.89%
+
+📦 Test 3.2: Fetching Sales Orders...
+   ✅ Found 10 sales orders
+   Sample Order:
+     - Number: S00413
+     - Customer: West Indies Oil
+     - Amount: $200
+     - State: sent
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏭 STEP 4: Testing Operations Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 Test 4.1: Fetching Products...
+   ✅ Found 10 products
+   Sample Product:
+     - Name: Site Visit - Outside Roseau
+     - Code:  SV2
+     - Price: $75
+     - Available: 0
+     - Type: service
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎧 STEP 5: Testing Customer Support
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👥 Test 5.1: Fetching Customers...
+   ✅ Found 10 customers
+   Sample Customer:
+     - Name: 100% Green
+     - Email: N/A
+     - Phone: +1 767-448-4557
+     - City: Roseau
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 STEP 6: Testing Projects Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🗂️  Test 6.1: Fetching Projects...
+   ✅ Found 10 projects
+   Sample Project:
+     - Name: CMS Ltd. & DQ Inc. Phase 2 
+     - Manager: Richard Mendes
+     - Customer: N/A
+     - Tasks: 0
+
+✅ Test 6.2: Fetching Tasks...
+   ✅ Found 10 tasks
+   Sample Task:
+     - Name: Customer acceptance and payment made
+     - Project: Clim8 - odoo Implementation
+     - Stage: Done
+     - Priority: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 STEP 7: Testing Activities
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 Test 7.1: Fetching Activities...
+   ✅ Found 10 activities
+   Sample Activity:
+     - Summary: Review proposal with Gerard
+     - Type: Call
+     - Assigned to: Eric Giraud
+     - Deadline: 2024-04-19
+     - State: overdue
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 TEST SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ System: 1/1 tests passed
+✅ Finance: 3/3 tests passed
+✅ Sales: 2/2 tests passed
+✅ Operations: 1/1 tests passed
+✅ Support: 1/1 tests passed
+✅ Projects: 2/2 tests passed
+✅ Communications: 1/1 tests passed
+
+Overall: 11/11 tests passed (100.0%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📈 DATA AVAILABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Finance - Fetch Invoices: 10 records
+   Finance - Unpaid Invoices: 10 records
+   Finance - Fetch Payments: 10 records
+   Sales - Fetch Opportunities: 10 records
+   Sales - Fetch Sales Orders: 10 records
+   Operations - Fetch Products: 10 records
+   Support - Fetch Customers: 10 records
+   Projects - Fetch Projects: 10 records
+   Projects - Fetch Tasks: 10 records
+   Communications - Fetch Activities: 10 records
+
+✅ All tests passed! Odoo JSON-2 API is working perfectly.
+

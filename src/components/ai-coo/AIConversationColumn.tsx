@@ -21,11 +21,11 @@ export function AIConversationColumn() {
   return (
     <div className="flex flex-col gap-4">
       {/* Header */}
-      <div className="rounded-lg border border-gray-200 bg-white p-6">
+      <div className="rounded-[10px] border border-gray-200 bg-white p-4">
         <div className="flex items-start justify-between">
           <div>
-            <h2 className="mb-1 text-lg font-medium text-gray-900">AI COO Conversation</h2>
-            <p className="text-sm text-gray-500">
+            <h2 className="mb-1 text-[18px] font-medium leading-[28px] text-[#0A0A0A]">AI COO Conversation</h2>
+            <p className="text-[14px] leading-5 text-[#717182]">
               {isLoading ? 'Loading...' :
                error ? 'Error loading recommendations' :
                decisionCards.length > 0 ? `I need your input on ${decisionCards.length} situation${decisionCards.length > 1 ? 's' : ''}` :

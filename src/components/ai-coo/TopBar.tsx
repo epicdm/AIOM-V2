@@ -12,7 +12,7 @@ export function TopBar() {
         <div className="flex items-center justify-between">
           {/* Left: Logo & Status */}
           <div className="flex items-center gap-4">
-            <h1 className="text-xl font-medium text-gray-900">AI Operator</h1>
+            <h1 className="text-[18px] font-medium leading-[28px] text-[#0A0A0A]">AI Operator</h1>
 
             <button
               onClick={() => setShowDrawer(true)}

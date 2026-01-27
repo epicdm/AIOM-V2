@@ -1,5 +1,6 @@
 import { pgTable, text, timestamp, boolean, index, integer, real, jsonb } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
+export * from './ai-coo-schema';
 
 // User table - Core user information for authentication
 export const user = pgTable("user", {

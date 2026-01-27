@@ -97,7 +97,10 @@ export function ApprovalReviewModal({
               </Dialog.Description>
             </div>
             <Dialog.Close asChild>
-              <button className="rounded-lg p-2 hover:bg-gray-100">
+              <button
+                aria-label="Close"
+                className="rounded-lg p-2 hover:bg-gray-100"
+              >
                 <X className="h-5 w-5 text-gray-500" />
               </button>
             </Dialog.Close>

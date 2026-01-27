@@ -94,8 +94,8 @@ test.describe('Phase 3 Component Wiring Verification', () => {
       console.log('✓ Screenshot saved: approval-review-modal.png');
 
       // Verify modal contents
-      await expect(page.locator('text=Select actions to approve')).toBeVisible();
-      await expect(page.locator('button:has-text("Approve")')).toBeVisible();
+      await expect(page.locator('[role="dialog"] p:has-text("Select actions to approve")').first()).toBeVisible();
+      await expect(page.locator('button:has-text("Approve")').first()).toBeVisible();
       await expect(page.locator('button:has-text("Cancel")').last()).toBeVisible();
 
       console.log('✓ Modal contents verified');
@@ -175,7 +175,7 @@ test.describe('Phase 3 Component Wiring Verification', () => {
     await page.waitForTimeout(500);
 
     // 4. Close drawer
-    await page.locator('button[aria-label="Close"], button:has(svg)').first().click();
+    await page.locator('[role="dialog"] button[aria-label="Close"]').click();
     console.log('✓ Step 4: Drawer closed');
 
     // 5. Open approval modal if available

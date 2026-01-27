@@ -1,0 +1,778 @@
+[dotenv@17.2.3] injecting env (23) from .env -- tip: ⚙️  override existing env vars with { override: true }
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║      Comprehensive Odoo Integration Test                 ║
+║      Testing All Departments & Common Scenarios          ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+🔗 Testing Odoo Instance: https://epic-communications-inc818.odoo.com
+📧 User: eric.giraud@epic.dm
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔌 STEP 1: Testing Authentication
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Authentication successful!
+   User ID: 12
+   Database: epic-communications-inc818
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💰 STEP 2: Testing Finance Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 Test 2.1: Fetching Invoices...
+   ✅ Found 10 invoices
+   Sample Invoice:
+     - Number: INV/2025/00086
+     - Customer: Clifftop Cleaning & Maintenance Services, Cyril Dewhurst
+     - Amount: $597.7
+     - Payment State: partial
+     - State: posted
+
+💳 Test 2.2: Fetching Unpaid Invoices...
+   ✅ Found 10 unpaid invoices
+   Total Unpaid Amount: $3750.57
+
+⏰ Test 2.3: Fetching Overdue Invoices...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/account/models/account_move.py", line 3758, in search_read
+    return super().search_read(domain, fields, offset, limit, order, **read_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [['move_type', '=', 'out_invoice'], ['payment_state', 'in', ['not_paid', 'partial']], ['state', '=', 'posted'], ['invoice_date_due', '<', '2026-01-27']], 'fields': ['name', 'partner_id', 'amount_residual', 'invoice_date_due'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testFinanceDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:177:29)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:778:5) {
+  code: 1,
+  data: undefined
+}
+💵 Test 2.4: Fetching Payments...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['name', 'partner_id', 'amount', 'payment_type', 'state', 'date'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testFinanceDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:219:22)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:778:5) {
+  code: 1,
+  data: undefined
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📈 STEP 3: Testing Sales Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Test 3.1: Fetching Sales Opportunities...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/crm/models/crm_lead.py", line 925, in search_fetch
+    return super().search_fetch(domain, field_names, offset, limit, order)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [['type', '=', 'opportunity']], 'fields': ['name', 'partner_id', 'expected_revenue', 'probability', 'stage_id', 'user_id', 'date_deadline'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testSalesDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:263:27)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:781:5) {
+  code: 1,
+  data: undefined
+}
+📦 Test 3.2: Fetching Sales Orders...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['name', 'partner_id', 'amount_total', 'state', 'date_order', 'user_id'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testSalesDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:301:20)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:781:5) {
+  code: 1,
+  data: undefined
+}
+📝 Test 3.3: Fetching Quotations...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [['state', 'in', ['draft', 'sent']]], 'fields': ['name', 'partner_id', 'amount_total', 'state', 'date_order'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testSalesDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:338:24)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:781:5) {
+  code: 1,
+  data: undefined
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏭 STEP 4: Testing Operations Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 Test 4.1: Fetching Products...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/product/models/product_product.py", line 557, in _search
+    return super()._search(domain, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['name', 'default_code', 'list_price', 'qty_available', 'type', 'active'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testOperationsDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:373:22)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:784:5) {
+  code: 1,
+  data: undefined
+}
+📊 Test 4.2: Fetching Stock Levels...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/stock/models/stock_quant.py", line 180, in _search
+    domain = Domain(domain).map_conditions(
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [['quantity', '>', 0]], 'fields': ['product_id', 'location_id', 'quantity', 'reserved_quantity'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testOperationsDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:411:25)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:784:5) {
+  code: 1,
+  data: undefined
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎧 STEP 5: Testing Customer Support
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👥 Test 5.1: Fetching Customers...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [['customer_rank', '>', 0]], 'fields': ['name', 'email', 'phone', 'city', 'country_id', 'customer_rank'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testCustomerSupport (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:454:23)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:787:5) {
+  code: 1,
+  data: undefined
+}
+🎫 Test 5.2: Fetching Helpdesk Tickets...
+   ⚠️  Helpdesk module may not be installed
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👔 STEP 6: Testing HR Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👨‍💼 Test 6.1: Fetching Employees...
+   ❌ Failed: OdooAccessError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/hr/models/hr_employee.py", line 1084, in search_fetch
+    return super().search_fetch(domain, field_names, offset, limit, order)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/hr/models/hr_employee.py", line 1215, in _search
+    return super()._search(domain, offset, limit, order, bypass_access=bypass_access, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['name', 'job_id', 'department_id', 'work_email', 'work_phone', 'active'], 'limit': 10}
+
+    at OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:163:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async testHRDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:535:23)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:790:5) {
+  code: undefined,
+  data: undefined
+}
+🏖️  Test 6.2: Fetching Leave Requests...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['employee_id', 'holiday_status_id', 'date_from', 'date_to', 'state', 'number_of_days'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testHRDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:572:20)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:790:5) {
+  code: 1,
+  data: undefined
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 STEP 7: Testing Projects Department
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🗂️  Test 7.1: Fetching Projects...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['name', 'user_id', 'partner_id', 'date_start', 'date', 'active', 'task_count'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testProjectsDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:616:22)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:793:5) {
+  code: 1,
+  data: undefined
+}
+✅ Test 7.2: Fetching Tasks...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['name', 'project_id', 'user_ids', 'stage_id', 'priority', 'date_deadline', 'active'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testProjectsDepartment (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:653:19)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:793:5) {
+  code: 1,
+  data: undefined
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 STEP 8: Testing Activities & Communications
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 Test 8.1: Fetching Activities...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/mail/models/mail_activity.py", line 380, in _search
+    query = super()._search(domain, offset, limit, order, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [], 'fields': ['summary', 'activity_type_id', 'user_id', 'date_deadline', 'state', 'res_model', 'res_id'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testActivitiesCommunications (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:698:24)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:796:5) {
+  code: 1,
+  data: undefined
+}
+💬 Test 8.2: Fetching Messages...
+   ❌ Failed: OdooError: Traceback (most recent call last):
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 162, in xmlrpc_2
+    response = self._xmlrpc(service)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/custom/trial/saas_trial/controllers/main.py", line 467, in _xmlrpc
+    res = super()._xmlrpc(service)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py", line 134, in _xmlrpc
+    result = dispatch_rpc(service, method, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/http.py", line 439, in dispatch_rpc
+    return dispatch(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 129, in dispatch
+    res = execute_cr(cr, uid, model, method_, args, kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 146, in execute_cr
+    result = retrying(partial(call_kw, recs, method, args, kw), env)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 184, in retrying
+    result = func()
+             ^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/service/model.py", line 93, in call_kw
+    result = method(recs, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5772, in search_read
+    records = self.search_fetch(domain or [], fields, offset=offset, limit=limit, order=order)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 1408, in search_fetch
+    query = self._search(domain, offset=offset, limit=limit, order=order or self._order)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/addons/mail/models/mail_message.py", line 341, in _search
+    query = super()._search(domain, offset, limit, order, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/models.py", line 5354, in _search
+    domain = Domain(domain)
+             ^^^^^^^^^^^^^^
+  File "/home/odoo/src/odoo/19.0/odoo/orm/domains.py", line 247, in __new__
+    raise TypeError(f"Domain() invalid argument type for domain: {arg!r}")
+TypeError: Domain() invalid argument type for domain: {'domain': [['message_type', '!=', 'notification']], 'fields': ['subject', 'body', 'author_id', 'date', 'message_type', 'model', 'res_id'], 'limit': 10}
+
+    at parseResponse (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:155:13)
+    at xmlRpcCall (C:\repos\AIOM-V2\src\lib\odoo\xml-rpc.ts:380:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async OdooClient.execute (C:\repos\AIOM-V2\src\lib\odoo\client.ts:146:22)
+    at async testActivitiesCommunications (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:736:22)
+    at async runAllTests (C:\repos\AIOM-V2\scripts\test-odoo-comprehensive.ts:796:5) {
+  code: 1,
+  data: undefined
+}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 TEST SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ System: 1/1 tests passed
+⚠️ Finance: 2/4 tests passed
+❌ Sales: 0/3 tests passed
+❌ Operations: 0/2 tests passed
+❌ Support: 0/2 tests passed
+❌ HR: 0/2 tests passed
+❌ Projects: 0/2 tests passed
+❌ Communications: 0/2 tests passed
+
+Overall: 3/18 tests passed (16.7%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📈 DATA AVAILABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Finance - Fetch Invoices: 10 records
+   Finance - Unpaid Invoices: 10 records
+
+✅ Comprehensive Odoo test complete!
+

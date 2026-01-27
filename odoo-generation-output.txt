@@ -1,0 +1,37 @@
+╔════════════════════════════════════════════════════════════╗
+║  AI COO Action Recommendation Generator                   ║
+║  Pulls real data from Odoo → Generates Claude actions     ║
+╚════════════════════════════════════════════════════════════╝
+
+🚀 Generating Action Recommendations from Odoo Data
+
+============================================================
+
+📡 Step 1: Connecting to Odoo...
+
+❌ Error generating recommendations: Error: Odoo configuration missing. Set ODOO_URL, ODOO_DATABASE, ODOO_USERNAME, and ODOO_PASSWORD in environment variables.
+    at getOdooConfigFromEnv (C:\repos\AIOM-V2\src\data-access\odoo.ts:40:11)
+    at getOdooClient (C:\repos\AIOM-V2\src\data-access\odoo.ts:55:34)
+    at generateRecommendations (C:\repos\AIOM-V2\scripts\generate-odoo-action-recommendations.ts:26:30)
+    at <anonymous> (C:\repos\AIOM-V2\scripts\generate-odoo-action-recommendations.ts:149:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Error Details:
+  Message: Odoo configuration missing. Set ODOO_URL, ODOO_DATABASE, ODOO_USERNAME, and ODOO_PASSWORD in environment variables.
+  Stack: Error: Odoo configuration missing. Set ODOO_URL, ODOO_DATABASE, ODOO_USERNAME, and ODOO_PASSWORD in environment variables.
+    at getOdooConfigFromEnv (C:\repos\AIOM-V2\src\data-access\odoo.ts:40:11)
+    at getOdooClient (C:\repos\AIOM-V2\src\data-access\odoo.ts:55:34)
+
+🔧 Troubleshooting:
+  1. Check Odoo connection:
+     - ODOO_URL is set in .env
+     - ODOO_DB is correct
+     - ODOO_USERNAME and ODOO_PASSWORD are valid
+  2. Check Claude API:
+     - ANTHROPIC_API_KEY is set in .env
+     - API key has credits available
+  3. Check database:
+     - DATABASE_URL is set
+     - Tables exist (run migrations)

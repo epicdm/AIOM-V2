@@ -75,15 +75,12 @@ export class TokenBucketRateLimiter {
     const cache = getRedisCache();
     const client = cache.getClient();
 
-    // If Redis is not connected, allow the request (fail open)
+    // If Redis is not connected, use in-memory fallback
     if (!client || !cache.isConnected()) {
-      console.warn('Rate limiter: Redis not connected, allowing request');
-      return {
-        allowed: true,
-        remaining: rule.maxTokens,
-        limit: rule.maxTokens,
-        resetIn: 0,
-      };
+      console.warn('Rate limiter: Redis not connected, using in-memory fallback');
+      const { getInMemoryRateLimiter } = await import('./fallback');
+      const fallback = getInMemoryRateLimiter();
+      return fallback.checkLimit(identifier, rule);
     }
 
     const key = this.buildKey(identifier);

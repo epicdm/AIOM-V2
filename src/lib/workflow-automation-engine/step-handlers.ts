@@ -83,26 +83,79 @@ export const actionStepHandler: StepHandler = {
         }
 
         case "email_send": {
-          // Placeholder for email sending
-          // In real implementation, integrate with email service
-          const { to, subject, body: emailBody } = resolvedParams as {
-            to: string;
+          // Send email via SMTP2GO
+          const { to, subject, body: emailBody, html } = resolvedParams as {
+            to: string | string[];
             subject: string;
-            body: string;
+            body?: string;
+            html?: string;
           };
-          console.log(`[Workflow] Sending email to ${to}: ${subject}`);
-          result = { sent: true, to, subject };
+          const { sendEmail } = await import('~/lib/email/service');
+          const emailResult = await sendEmail({
+            to,
+            subject,
+            body: emailBody,
+            html,
+          });
+          console.log(
+            `[Workflow] Email ${emailResult.sent ? 'sent' : 'failed'} to ${
+              Array.isArray(to) ? to.join(', ') : to
+            }: ${subject}`
+          );
+          result = { ...emailResult, to, subject };
           break;
         }
 
-        case "odoo_create":
-        case "odoo_update":
-        case "odoo_delete":
+        case "odoo_create": {
+          // Create record in Odoo
+          const { model, values } = resolvedParams as { model: string; values: Record<string, unknown> };
+          const { getOdooClient } = await import('~/data-access/odoo');
+          const odooClient = await getOdooClient();
+          const recordId = await odooClient.create(model, values);
+          console.log(`[Workflow] Created Odoo ${model} record: ${recordId}`);
+          result = { recordId, model, success: true };
+          break;
+        }
+
+        case "odoo_update": {
+          // Update record(s) in Odoo
+          const { model, ids, values } = resolvedParams as {
+            model: string;
+            ids: number[];
+            values: Record<string, unknown>;
+          };
+          const { getOdooClient } = await import('~/data-access/odoo');
+          const odooClient = await getOdooClient();
+          await odooClient.write(model, ids, values);
+          console.log(`[Workflow] Updated ${ids.length} Odoo ${model} record(s)`);
+          result = { updated: ids.length, model, success: true };
+          break;
+        }
+
+        case "odoo_delete": {
+          // Delete record(s) in Odoo
+          const { model, ids } = resolvedParams as { model: string; ids: number[] };
+          const { getOdooClient } = await import('~/data-access/odoo');
+          const odooClient = await getOdooClient();
+          await odooClient.unlink(model, ids);
+          console.log(`[Workflow] Deleted ${ids.length} Odoo ${model} record(s)`);
+          result = { deleted: ids.length, model, success: true };
+          break;
+        }
+
         case "odoo_search": {
-          // Odoo integration - placeholder
-          // In real implementation, use Odoo client
-          console.log(`[Workflow] Odoo action: ${config.actionType}`, resolvedParams);
-          result = { action: config.actionType, params: resolvedParams };
+          // Search for records in Odoo
+          const { model, domain, fields, limit } = resolvedParams as {
+            model: string;
+            domain: unknown[];
+            fields?: string[];
+            limit?: number;
+          };
+          const { getOdooClient } = await import('~/data-access/odoo');
+          const odooClient = await getOdooClient();
+          const records = await odooClient.searchRead(model, domain, { fields, limit });
+          console.log(`[Workflow] Found ${records.length} Odoo ${model} record(s)`);
+          result = { count: records.length, records, model, success: true };
           break;
         }
 

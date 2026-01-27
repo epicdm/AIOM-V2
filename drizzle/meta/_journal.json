@@ -127,6 +127,20 @@
       "when": 1768702700000,
       "tag": "0017_multi_tenant_schema",
       "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1768733266410,
+      "tag": "0018_parallel_molecule_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1769495518014,
+      "tag": "0019_violet_tusk",
+      "breakpoints": true
     }
   ]
 }

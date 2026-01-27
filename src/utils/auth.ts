@@ -14,8 +14,9 @@ export const auth = betterAuth({
   },
   socialProviders: {
     google: {
-      clientId: privateEnv.GOOGLE_CLIENT_ID,
-      clientSecret: privateEnv.GOOGLE_CLIENT_SECRET,
+      clientId: privateEnv.GOOGLE_CLIENT_ID || "",
+      clientSecret: privateEnv.GOOGLE_CLIENT_SECRET || "",
     },
   },
+  secret: privateEnv.BETTER_AUTH_SECRET,
 });

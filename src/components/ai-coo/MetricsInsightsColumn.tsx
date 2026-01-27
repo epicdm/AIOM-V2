@@ -58,8 +58,8 @@ export function MetricsInsightsColumn() {
       ) : (
         <>
           {/* Today's Impact */}
-          <div className="rounded-lg border border-gray-200 bg-white p-4">
-            <h3 className="mb-4 text-sm font-medium text-gray-500">TODAY'S IMPACT</h3>
+          <div className="rounded-[10px] border border-gray-200 bg-white p-4">
+            <h3 className="mb-4 text-[12px] font-medium uppercase leading-4 tracking-wide text-gray-500">TODAY'S IMPACT</h3>
 
             <div className="space-y-3">
               {todaysImpact.map((metric) => (
@@ -70,8 +70,8 @@ export function MetricsInsightsColumn() {
 
           {/* AI Learnings */}
           {insights.length > 0 && (
-            <div className="rounded-lg border border-gray-200 bg-white p-4">
-              <h3 className="mb-4 text-sm font-medium text-gray-500">AI LEARNINGS</h3>
+            <div className="rounded-[10px] border border-gray-200 bg-white p-4">
+              <h3 className="mb-4 text-[12px] font-medium uppercase leading-4 tracking-wide text-gray-500">AI LEARNINGS</h3>
 
               <div className="space-y-3">
                 {insights.map((insight) => (
@@ -83,8 +83,8 @@ export function MetricsInsightsColumn() {
 
           {/* Patterns */}
           {patterns.length > 0 && (
-            <div className="rounded-lg border border-gray-200 bg-white p-4">
-              <h3 className="mb-4 text-sm font-medium text-gray-500">PATTERNS</h3>
+            <div className="rounded-[10px] border border-gray-200 bg-white p-4">
+              <h3 className="mb-4 text-[12px] font-medium uppercase leading-4 tracking-wide text-gray-500">PATTERNS</h3>
 
               <div className="space-y-3">
                 {patterns.map((pattern: any) => (
@@ -123,10 +123,10 @@ function MetricTileComponent({ label, value, trend, sparkline }: MetricTile) {
 
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-4">
-      <p className="mb-2 text-xs text-gray-500">{label}</p>
+      <p className="mb-2 text-[12px] leading-4 text-[#717182]">{label}</p>
 
       <div className="mb-2 flex items-end justify-between">
-        <span className="text-2xl font-normal text-gray-900">{value}</span>
+        <span className="text-2xl font-normal text-[#0A0A0A]">{value}</span>
         {trend && (
           <div className="flex items-center gap-1">
             {getTrendIcon()}
@@ -172,17 +172,17 @@ function InsightCardComponent({
         </div>
 
         <div className="flex-1">
-          <p className="mb-2 text-sm leading-relaxed text-gray-900">{title}</p>
+          <p className="mb-2 text-[14px] leading-relaxed text-[#0A0A0A]">{title}</p>
 
           <div className="flex gap-2">
             <Lightbulb className="h-3.5 w-3.5 flex-shrink-0 text-gray-400 mt-0.5" />
-            <p className="text-xs leading-relaxed text-gray-500">{explanation}</p>
+            <p className="text-[12px] leading-relaxed text-[#717182]">{explanation}</p>
           </div>
         </div>
       </div>
 
       <div className="flex items-center gap-2">
-        <button className="flex-1 rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700">
+        <button className="flex-1 rounded-lg bg-[#3B82F6] px-3 py-2 text-[14px] font-medium leading-5 text-white hover:bg-blue-700">
           {actionLabel}
         </button>
         <span
