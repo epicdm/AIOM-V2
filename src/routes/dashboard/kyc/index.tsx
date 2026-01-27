@@ -67,7 +67,7 @@ export const Route = createFileRoute("/dashboard/kyc/")({
   component: KycVerificationPage,
 });
 
-type StatusFilter = KycVerificationStatus | "all" | "pending_review";
+type StatusFilter = KycVerificationStatus | "all" | "pending_review" | "submitted";
 
 const STATUS_OPTIONS: { value: StatusFilter; label: string }[] = [
   { value: "all", label: "All Verifications" },
