@@ -94,6 +94,53 @@ const modelSchema = z.enum([
 ]);
 
 // ============================================================================
+// Result Types
+// ============================================================================
+
+export type SendClaudeMessageResult =
+  | {
+      success: true;
+      response: {
+        id: string;
+        content: MessageResponse["content"];
+        model: string;
+        stopReason: string | null;
+        usage: MessageResponse["usage"];
+      };
+      cacheStats?: CacheStats;
+    }
+  | {
+      success: false;
+      error: string;
+    };
+
+export type SendClaudeMessageWithToolsResult =
+  | {
+      success: true;
+      response: {
+        id: string;
+        content: MessageResponse["content"];
+        model: string;
+        stopReason: string | null;
+        usage: MessageResponse["usage"];
+      };
+    }
+  | {
+      success: false;
+      error: string;
+    };
+
+export type CompleteWithClaudeResult =
+  | {
+      success: true;
+      text: string;
+    }
+  | {
+      success: false;
+      error: string;
+    };
+
+// ============================================================================
 // Server Functions
 // ============================================================================
 
@@ -114,7 +161,7 @@ export const sendClaudeMessageFn = createServerFn({
     })
   )
   .middleware([authenticatedMiddleware])
-  .handler(async ({ data, context }) => {
+  .handler(async ({ data, context }): Promise<SendClaudeMessageResult> => {
     try {
       const client = getClaudeClient(privateEnv.ANTHROPIC_API_KEY);
 
@@ -145,7 +192,7 @@ export const sendClaudeMessageFn = createServerFn({
         cacheStats = calculateCacheStats(response.usage);
       }
 
-      return {
+      const result: SendClaudeMessageResult = {
         success: true,
         response: {
           id: response.id,
@@ -156,11 +203,13 @@ export const sendClaudeMessageFn = createServerFn({
         },
         cacheStats,
       };
+      return result;
     } catch (error) {
-      return {
+      const result: SendClaudeMessageResult = {
         success: false,
         error: formatClaudeError(error),
       };
+      return result;
     }
   });
 
@@ -182,7 +231,7 @@ export const sendClaudeMessageWithToolsFn = createServerFn({
     })
   )
   .middleware([authenticatedMiddleware])
-  .handler(async ({ data, context }) => {
+  .handler(async ({ data, context }): Promise<SendClaudeMessageWithToolsResult> => {
     try {
       const client = getClaudeClient(privateEnv.ANTHROPIC_API_KEY);
 
@@ -197,7 +246,7 @@ export const sendClaudeMessageWithToolsFn = createServerFn({
         userId: context.userId,
       });
 
-      return {
+      const result: SendClaudeMessageWithToolsResult = {
         success: true,
         response: {
           id: response.id,
@@ -207,11 +256,13 @@ export const sendClaudeMessageWithToolsFn = createServerFn({
           usage: response.usage,
         },
       };
+      return result;
     } catch (error) {
-      return {
+      const result: SendClaudeMessageWithToolsResult = {
         success: false,
         error: formatClaudeError(error),
       };
+      return result;
     }
   });
 
@@ -231,7 +282,7 @@ export const completeWithClaudeFn = createServerFn({
     })
   )
   .middleware([authenticatedMiddleware])
-  .handler(async ({ data }) => {
+  .handler(async ({ data }): Promise<CompleteWithClaudeResult> => {
     try {
       const client = getClaudeClient(privateEnv.ANTHROPIC_API_KEY);
 
@@ -242,15 +293,17 @@ export const completeWithClaudeFn = createServerFn({
         temperature: data.temperature,
       });
 
-      return {
+      const result: CompleteWithClaudeResult = {
         success: true,
         text: response,
       };
+      return result;
     } catch (error) {
-      return {
+      const result: CompleteWithClaudeResult = {
         success: false,
         error: formatClaudeError(error),
       };
+      return result;
     }
   });
 
@@ -296,8 +349,8 @@ export const checkClaudeConfigFn = createServerFn({
 // Type Exports for Queries
 // ============================================================================
 
-export type SendClaudeMessageResult = Awaited<ReturnType<typeof sendClaudeMessageFn>>;
-export type SendClaudeMessageWithToolsResult = Awaited<ReturnType<typeof sendClaudeMessageWithToolsFn>>;
-export type CompleteWithClaudeResult = Awaited<ReturnType<typeof completeWithClaudeFn>>;
+// SendClaudeMessageResult, SendClaudeMessageWithToolsResult, and CompleteWithClaudeResult
+// are defined at the top of this file with explicit type unions
+
 export type GetClaudeModelsResult = Awaited<ReturnType<typeof getClaudeModelsFn>>;
 export type CheckClaudeConfigResult = Awaited<ReturnType<typeof checkClaudeConfigFn>>;
