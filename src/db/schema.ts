@@ -185,6 +185,49 @@ export type TenantMember = typeof tenantMember.$inferSelect;
 export type CreateTenantMemberData = typeof tenantMember.$inferInsert;
 export type UpdateTenantMemberData = Partial<Omit<CreateTenantMemberData, "id" | "createdAt" | "tenantId" | "userId">>;
 
+// Gateway Message - Multi-channel assistant gateway messages
+export const gatewayMessage = pgTable(
+  "gateway_message",
+  {
+    id: text("id").primaryKey(),
+    tenantId: text("tenant_id")
+      .notNull()
+      .references(() => tenant.id, { onDelete: "cascade" }),
+    channel: text("channel").notNull(), // "telegram" | "web" | "whatsapp" | "sms"
+    externalChatId: text("external_chat_id").notNull(),
+    externalUserId: text("external_user_id").notNull(),
+    externalMessageId: text("external_message_id"), // nullable for non-message updates
+    dedupeKey: text("dedupe_key").notNull().unique(), // unique constraint for idempotency
+    text: text("text"), // nullable for non-text messages
+    raw: jsonb("raw").notNull(), // raw payload from channel
+    receivedAt: timestamp("received_at").notNull(),
+    createdAt: timestamp("created_at")
+      .$defaultFn(() => new Date())
+      .notNull(),
+  },
+  (table) => [
+    index("idx_gateway_message_tenant_channel_chat").on(
+      table.tenantId,
+      table.channel,
+      table.externalChatId,
+      table.receivedAt
+    ),
+    index("idx_gateway_message_dedupe_key").on(table.dedupeKey),
+  ]
+);
+
+// Gateway Message Relations
+export const gatewayMessageRelations = relations(gatewayMessage, ({ one }) => ({
+  tenant: one(tenant, {
+    fields: [gatewayMessage.tenantId],
+    references: [tenant.id],
+  }),
+}));
+
+// Gateway Message type exports
+export type GatewayMessage = typeof gatewayMessage.$inferSelect;
+export type CreateGatewayMessageData = typeof gatewayMessage.$inferInsert;
+
 // User Profile - Extended profile information
 export const userProfile = pgTable(
   "user_profile",
@@ -3392,7 +3435,7 @@ export const unifiedInboxThread = pgTable(
     // Priority scoring (AI-powered)
     priorityScore: real("priority_score").$default(() => 0), // 0-100 importance score
     priorityLevel: text("priority_level").$default(() => "normal"), // "critical" | "high" | "normal" | "low"
-    priorityFactors: jsonb("priority_factors"), // JSON object with scoring factors breakdown
+    priorityFactors: jsonb("priority_factors").$type<PriorityFactors>(), // JSON object with scoring factors breakdown
     priorityReason: text("priority_reason"), // Human-readable explanation of priority
     scoredAt: timestamp("scored_at"), // When the score was last calculated
     isHighPriority: boolean("is_high_priority").$default(() => false).notNull(), // Computed flag for UI filtering
@@ -3555,15 +3598,6 @@ export type UnifiedInboxFilter = {
 
 // Wallet Status types
 export type WalletStatus = "active" | "frozen" | "suspended" | "closed";
-
-// KYC Verification Status types
-export type KycVerificationStatus =
-  | "not_started"
-  | "pending"
-  | "under_review"
-  | "approved"
-  | "rejected"
-  | "expired";
 
 // KYC Level types (tiered verification levels)
 export type KycLevel = "none" | "basic" | "intermediate" | "advanced";

@@ -10,6 +10,8 @@
  */
 
 import { createFileRoute } from "@tanstack/react-router";
+import { insertGatewayMessageIfNew } from "~/data-access/gateway-messages";
+import type { CreateGatewayMessageData } from "~/lib/gateway/types";
 
 /**
  * Normalized Telegram message format
@@ -203,12 +205,45 @@ export const Route = createFileRoute("/api/telegram/webhook")({
           }
         );
 
-        // TODO (PM STEP 26): Persist normalized message to DB or event log
+        // PM STEP 26: Persist message to gateway_message table
+        // Compute dedupe key for idempotency
+        const dedupeKey = message.message_id
+          ? `telegram:${tenantId}:${chatId}:${message.message_id}`
+          : `telegram:${tenantId}:update:${update.update_id}`;
+
+        const gatewayMessageData: CreateGatewayMessageData = {
+          id: `gw_${Date.now()}_${Math.random().toString(36).substring(7)}`,
+          tenantId: tenantId,
+          channel: "telegram",
+          externalChatId: chatId.toString(),
+          externalUserId: userId.toString(),
+          externalMessageId: message.message_id.toString(),
+          dedupeKey: dedupeKey,
+          text: message.text!,
+          raw: update as unknown as Record<string, unknown>,
+          receivedAt: new Date(message.date * 1000), // Telegram date is Unix timestamp
+        };
+
+        const insertResult = await insertGatewayMessageIfNew(gatewayMessageData);
+
+        if (insertResult.inserted) {
+          console.log(
+            `[TelegramWebhook] Message persisted: ${insertResult.id} (dedupe: ${dedupeKey})`
+          );
+        } else {
+          console.log(
+            `[TelegramWebhook] Duplicate message ignored (dedupe: ${dedupeKey})`
+          );
+        }
+
         // TODO (PM STEP 27): Execute tools based on message content
 
         return Response.json({
           ok: true,
           normalized: normalized,
+          persisted: insertResult.inserted,
+          gatewayMessageId: insertResult.id,
+          dedupeKey: dedupeKey,
           // Include routing info for debugging
           routing: {
             tenantId: tenantId,
