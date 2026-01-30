@@ -7,6 +7,9 @@ export default defineConfig({
   out: "./drizzle",
   dbCredentials: {
     url: privateEnv.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false, // Required for DigitalOcean managed databases
+    },
   },
   verbose: true,
   strict: true,
