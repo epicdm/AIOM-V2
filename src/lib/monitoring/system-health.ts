@@ -43,10 +43,17 @@ async function checkDatabase(): Promise<HealthCheck> {
       message: 'Database connection healthy',
     };
   } catch (error) {
+    const errorMessage = error instanceof Error
+      ? `Failed query: SELECT 1 as health_check\nparams: ${error.message}`
+      : 'Database connection failed';
+
+    // Log to console for debugging
+    console.error('[Health Check] Database error:', error);
+
     return {
       status: 'fail',
       responseTime: Date.now() - start,
-      message: error instanceof Error ? error.message : 'Database connection failed',
+      message: errorMessage,
     };
   }
 }
